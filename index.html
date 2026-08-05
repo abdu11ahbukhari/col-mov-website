@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collective Moves, Dallas-Fort Worth</title>
+<meta name="description" content="One call connects your family to a senior real estate specialist, an estate attorney, a senior living navigator, and a moving team, all coordinated instead of scattered.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23171717'/%3E%3Ctext x='50' y='63' font-family='Georgia,serif' font-size='38' fill='%23ffffff' text-anchor='middle'%3ECM%3C/text%3E%3C/svg%3E">
+<style>
+
+  /* Palette matched to compass.com: near-black ink on white, a classic
+     serif for headlines (falls back exactly the way Compass's own
+     "Compass Serif" does) and a neutral grotesque for everything else.
+     The four brand colors are kept only inside the Collective Moves
+     compass mark itself; everywhere else the site runs monochrome. */
+  :root{
+    --navy: #171717;
+    --navy-deep: #0a0a0a;
+    --gold: #63636b;
+    --teal: #171717;
+    --green: #71975a;
+    --purple: #7d5aa3;
+    --cream: #f7f7f5;
+    --paper: #ffffff;
+    --ink: #171717;
+    --ink-soft: #58585c;
+    --line: #e2e2e0;
+    --serif: Georgia, 'Times New Roman', Times, serif;
+    --sans: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{ max-width: 100%; display: block; }
+  a{ color: inherit; }
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .eyebrow{
+    font-size: 12.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold);
+  }
+  h1,h2,h3{
+    font-family: var(--serif);
+    font-weight: 400;
+    margin: 0;
+    color: var(--navy);
+  }
+  .reveal{
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.in{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- SECTION BACKGROUND PHOTOS ---------- */
+  .section-photo{
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 14%, rgba(0,0,0,1) 86%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 14%, rgba(0,0,0,1) 86%, rgba(0,0,0,0) 100%);
+  }
+  .section-photo.op-light{ opacity: 0.13; }
+  .section-photo.op-dark{ opacity: 0.32; }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 32px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .brand{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .brand img{
+    height: 160px;
+    width: auto;
+    display: block;
+  }
+  nav.main-links{
+    display: flex;
+    align-items: center;
+    gap: 34px;
+  }
+  nav.main-links a{
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--ink);
+    opacity: 0.82;
+  }
+  nav.main-links a:hover{ opacity: 1; color: var(--navy); }
+  .nav-pill{
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 9999px;
+    padding: 7px 16px;
+    opacity: 1 !important;
+  }
+  .nav-pill:hover{ background: var(--line) !important; color: var(--navy); }
+  .nav-cta{
+    background: var(--navy);
+    color: var(--paper) !important;
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 1 !important;
+    border: 1px solid var(--navy);
+  }
+  .nav-toggle{ display:none; background:none; border:none; cursor:pointer; }
+  @media (max-width: 880px){
+    nav.main-links{
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: var(--paper);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 32px 28px;
+      border-bottom: 1px solid var(--line);
+      display: none;
+      gap: 18px;
+    }
+    nav.main-links.open{ display: flex; }
+    .nav-toggle{ display: block; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 28px 0 20px;
+    background: var(--paper);
+    overflow: hidden;
+    position: relative;
+  }
+  .hero .wrap{
+    max-width: 860px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1{
+    font-size: clamp(34px, 4.6vw, 54px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 18px 0 22px;
+  }
+  .hero .lede{
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin-bottom: 34px;
+  }
+  .hero .cta-row{ display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+  .btn-primary{
+    display: inline-block;
+    background: var(--navy);
+    color: var(--paper);
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 1px solid var(--navy);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-primary:hover{ background: var(--navy-deep); border-color: var(--navy-deep); }
+  .btn-ghost{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--navy);
+    border-bottom: 1.5px solid var(--navy);
+    padding-bottom: 3px;
+  }
+  /* ---------- TEAM PHOTO ---------- */
+  .team-photo{ padding: 8px 0 96px; background: var(--paper); }
+  .team-photo-row{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 26px;
+  }
+  .tp-avatar{
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .tp-avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .tp-avatar span{
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ink-soft);
+  }
+  .team-photo-caption{
+    text-align: center;
+    margin-top: 22px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  .tp-actions{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .tp-btn{
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--navy);
+    text-decoration: none;
+    padding: 11px 22px;
+    border: 1px solid var(--ink);
+    border-radius: 6px;
+    background: transparent;
+    transition: background .2s ease, color .2s ease;
+  }
+  .tp-btn:hover{ background: var(--ink); color: var(--paper); }
+  .tp-btn.solid{ background: var(--ink); color: var(--paper); }
+  .tp-btn.solid:hover{ background: var(--navy-deep); }
+  @media (max-width: 620px){
+    .team-photo-row{ gap: 14px; }
+    .tp-avatar{ width: 84px; height: 84px; }
+    .team-photo-caption{ font-size: 12px; padding: 0 12px; }
+    .tp-actions{ padding: 0 16px; }
+    .tp-btn{ font-size: 12.5px; padding: 10px 18px; }
+  }
+
+  /* ---------- REALITY ---------- */
+  .reality{
+    padding: 100px 0;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  .reality .grid{
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+  .reality h2{
+    font-size: clamp(28px, 3.4vw, 38px);
+    line-height: 1.2;
+    margin-top: 14px;
+  }
+  .reality .body p{
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+  }
+  .reality .pull{
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.4vw, 27px);
+    color: var(--navy);
+    line-height: 1.4;
+    margin-top: 26px;
+    position: relative;
+    padding-left: 26px;
+    border-left: 3px solid var(--teal);
+  }
+  @media (max-width: 880px){
+    .reality .grid{ grid-template-columns: 1fr; gap: 30px; }
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services{
+    padding: 100px 0 110px;
+    background: var(--cream);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .services > .wrap{ position: relative; z-index: 1; }
+  .services-head{
+    max-width: 640px;
+    margin-bottom: 64px;
+  }
+  .services-head h2{
+    font-size: clamp(28px, 3.6vw, 40px);
+    margin-top: 14px;
+  }
+  .services-head p{
+    color: var(--ink-soft);
+    font-size: 16.5px;
+    margin-top: 18px;
+  }
+  .spine{
+    position: relative;
+  }
+  .spine::before{
+    content:'';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1.5px;
+    background: var(--line);
+    transform: translateX(-50%);
+  }
+  .service-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    padding: 38px 0;
+  }
+  .service-row .side{ padding: 0 56px; }
+  .service-row .side.empty{ }
+  .service-row:nth-child(odd) .text{ grid-column: 1; text-align: right; }
+  .service-row:nth-child(odd) .spacer{ grid-column: 2; }
+  .service-row:nth-child(even) .text{ grid-column: 2; text-align: left; order: 2; }
+  .service-row:nth-child(even) .spacer{ grid-column: 1; order: 1; }
+  .node{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .node svg{ width: 22px; height: 22px; }
+  .service-row h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .service-row p{
+    color: var(--ink-soft);
+    font-size: 15.3px;
+    margin: 0;
+  }
+  .tag-num{
+    display: inline-block;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  @media (max-width: 820px){
+    .spine::before{ left: 26px; }
+    .service-row{ grid-template-columns: 1fr; padding-left: 66px; }
+    .service-row .text, .service-row:nth-child(even) .text{
+      grid-column: 1; text-align: left; order: 0;
+    }
+    .service-row .spacer, .service-row:nth-child(even) .spacer{ display: none; }
+    .node{ left: 26px; top: 6px; transform: translate(-50%,0); }
+  }
+
+  /* ---------- MISSION BAND ---------- */
+  .mission{
+    background: var(--navy);
+    color: var(--cream);
+    padding: 110px 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .mission::before{
+    content:'';
+    position: absolute;
+    width: 620px; height: 620px;
+    border: 1px solid rgba(248,244,236,0.08);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .mission::after{
+    content:'';
+    position: absolute;
+    width: 460px; height: 460px;
+    border: 1px solid rgba(248,244,236,0.08);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .mission-inner{ position: relative; z-index: 2; max-width: 780px; margin: 0 auto; }
+  .mission .eyebrow{ color: rgba(248,244,236,0.6); }
+  .mission blockquote{
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(24px, 3.4vw, 36px);
+    line-height: 1.45;
+    margin: 22px 0 0;
+  }
+  .mission cite{
+    display: block;
+    margin-top: 26px;
+    font-style: normal;
+    font-size: 13.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(248,244,236,0.6);
+  }
+
+  /* ---------- TEAM ---------- */
+  .team{ padding: 110px 0; background: var(--paper); }
+  .team-head{ max-width: 620px; margin-bottom: 70px; }
+  .team-head h2{ font-size: clamp(28px, 3.6vw, 40px); margin-top: 14px; }
+  .team-head p{ color: var(--ink-soft); font-size: 16.5px; margin-top: 18px; }
+
+  .profile{
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+    align-items: center;
+    padding: 56px 0;
+    border-top: 1px solid var(--line);
+  }
+  .team > .wrap > .profile:first-of-type{ border-top: none; padding-top: 0; }
+  .profile.reverse{ grid-template-columns: 1.15fr 0.85fr; }
+  .profile.reverse .photo{ order: 2; }
+  .profile.reverse .content{ order: 1; }
+
+  .photo{
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    background: linear-gradient(155deg, var(--cream), #eee5d0);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .content .role{
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .content h3{
+    font-size: clamp(24px, 2.6vw, 30px);
+    margin: 8px 0 16px;
+  }
+  .content p{
+    color: var(--ink-soft);
+    font-size: 15.6px;
+    margin: 0 0 14px;
+  }
+  .content .with-team{
+    font-size: 14px;
+    color: var(--navy);
+    background: var(--cream);
+    border-left: 2px solid var(--teal);
+    padding: 10px 14px;
+    margin-top: 18px;
+  }
+  @media (max-width: 820px){
+    .profile, .profile.reverse{ grid-template-columns: 1fr; gap: 24px; }
+    .profile.reverse .photo{ order: 0; }
+    .profile.reverse .content{ order: 0; }
+    .photo{ max-width: 260px; }
+  }
+
+  /* ---------- BETTER TOGETHER ---------- */
+  .together{
+    background: var(--navy-deep);
+    color: var(--cream);
+    padding: 120px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .together > .wrap{ position: relative; z-index: 1; }
+  .together-head{ max-width: 640px; margin: 0 auto 60px; text-align: center; }
+  .together .eyebrow{ color: rgba(248,244,236,0.6); }
+  .together-head h2{ color: var(--paper); font-size: clamp(28px, 3.6vw, 40px); margin-top: 14px; }
+  .together-head p{ color: rgba(248,244,236,0.68); font-size: 16.5px; margin-top: 18px; }
+
+  .diagram-wrap{
+    max-width: 620px;
+    margin: 0 auto 56px;
+  }
+  .diagram{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+  .diagram svg.lines{
+    position: absolute; inset: 0; width: 100%; height: 100%;
+  }
+  .dnode{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 132px;
+  }
+  .dnode .bubble{
+    width: 84px; height: 84px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: rgba(248,244,236,0.06);
+    border: 1px solid rgba(248,244,236,0.28);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .dnode svg{ width: 30px; height: 30px; }
+  .dnode span{ font-size: 12.5px; font-weight: 600; line-height: 1.3; color: rgba(248,244,236,0.88); }
+  .dnode.family .bubble{
+    width: 118px; height: 118px;
+    background: var(--paper);
+    border: none;
+  }
+  .dnode.family svg{ width: 40px; height: 40px; }
+  .dnode.family span{ font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--navy-deep); }
+
+  .diagram-mobile{ display: none; }
+
+  @media (max-width: 720px){
+    .diagram-wrap{ display: none; }
+    .diagram-mobile{
+      display: block;
+      max-width: 460px;
+      margin: 0 auto;
+      position: relative;
+      padding-left: 30px;
+    }
+    .diagram-mobile::before{
+      content:'';
+      position: absolute;
+      left: 9px; top: 8px; bottom: 8px;
+      width: 1.5px;
+      background: rgba(248,244,236,0.22);
+    }
+    .dm-row{ position: relative; padding: 0 0 28px 26px; }
+    .dm-row::before{
+      content:'';
+      position: absolute;
+      left: -21px; top: 4px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: rgba(248,244,236,0.55);
+    }
+    .dm-row.center::before{ background: var(--cream); width: 14px; height: 14px; left: -23px; }
+    .dm-row strong{ display:block; font-size: 15px; color: var(--paper); margin-bottom: 3px; }
+    .dm-row span{ font-size: 13.5px; color: rgba(248,244,236,0.65); }
+  }
+
+  .together-note{
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: rgba(248,244,236,0.7);
+    padding-top: 30px;
+    border-top: 1px solid rgba(248,244,236,0.14);
+  }
+  .together-note strong{ color: var(--paper); }
+
+  /* ---------- VOICES ---------- */
+  .voices{ padding: 110px 0; background: var(--cream); }
+  .voices .wrap{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 70px;
+  }
+  .quote-feature .eyebrow{ margin-bottom: 16px; display:block; }
+  .quote-feature q{
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.6vw, 30px);
+    line-height: 1.5;
+    color: var(--navy);
+    quotes: none;
+  }
+  .quote-feature .attr{
+    margin-top: 22px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+  .voices-side{
+    border-left: 1px solid var(--line);
+    padding-left: 44px;
+  }
+  .mini-quote{ margin-bottom: 34px; }
+  .mini-quote:last-child{ margin-bottom: 0; }
+  .mini-quote p{
+    font-size: 15.3px;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+    font-style: italic;
+  }
+  .mini-quote .attr{ font-size: 13px; font-weight: 600; color: var(--navy); }
+  @media (max-width: 880px){
+    .voices .wrap{ grid-template-columns: 1fr; gap: 40px; }
+    .voices-side{ border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 34px; }
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{ padding: 110px 0; background: var(--paper); position: relative; overflow: hidden; }
+  .contact > .wrap{ position: relative; z-index: 1; }
+  .contact .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+  }
+  .contact h2{ font-size: clamp(28px, 3.6vw, 38px); margin-top: 14px; }
+  .contact .lede{ color: var(--ink-soft); font-size: 16.5px; margin-top: 18px; max-width: 42ch; }
+
+  .form-card{
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 38px;
+  }
+  .form-card label{
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .form-row{ margin-bottom: 20px; }
+  .form-row input, .form-row textarea, .form-row select{
+    width: 100%;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    border-radius: 3px;
+    padding: 12px 14px;
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+  .form-row textarea{ resize: vertical; min-height: 90px; }
+  .form-card button{
+    width: 100%;
+    background: var(--navy);
+    color: var(--paper);
+    border: none;
+    padding: 15px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .form-card button:hover{ background: var(--navy-deep); }
+  .form-note{ font-size: 12.5px; color: var(--ink-soft); margin-top: 12px; text-align: center; }
+  @media (max-width: 880px){ .contact .grid{ grid-template-columns: 1fr; gap: 40px; } }
+
+  /* ---------- FOOTER ---------- */
+  footer.site-footer{
+    background: var(--navy-deep);
+    color: rgba(248,244,236,0.75);
+    padding: 60px 0 32px;
+  }
+  .footer-top{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(248,244,236,0.14);
+  }
+  .footer-brand{
+    display: flex;
+    align-items: center;
+    background: var(--paper);
+    padding: 14px 22px;
+    border-radius: 6px;
+  }
+  .footer-brand img{ height: 84px; width: auto; display: block; }
+  .footer-links{ display: flex; gap: 40px; flex-wrap: wrap; }
+  .footer-links div h4{
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(248,244,236,0.5); margin: 0 0 12px; font-weight: 600;
+  }
+  .footer-links a{ display: block; font-size: 14px; text-decoration: none; color: rgba(248,244,236,0.82); margin-bottom: 9px; }
+  .footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding-top: 26px;
+    font-size: 12.5px;
+    color: rgba(248,244,236,0.5);
+  }
+  .footer-bottom .legal{ max-width: 640px; }
+
+  ::selection{ background: var(--ink); color: var(--paper); }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <img src="assets/collective-moves-logo.png" alt="Collective Moves: Gathered together, Moving you forward">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.main-links').classList.toggle('open')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="main-links">
+      <a href="team.html" class="nav-pill">Meet the Collective</a>
+      <a href="#services">How It Works</a>
+      <a href="#together">Better Together</a>
+      <a href="#voices">Families We've Helped</a>
+      <a href="resources.html" class="nav-pill">Resources</a>
+      <a href="#contact" class="nav-cta">Start a Conversation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="section-photo op-light" style="background-image:url('assets/bg-hero.jpg')"></div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Dallas–Fort Worth · Senior Transition Network</span>
+        <h1>There's a Lot Sitting Inside That House Besides Furniture.</h1>
+        <p class="lede">Selling it, letting go of it, and figuring out what comes next for the people who lived there is rarely just a real estate question. Collective Moves puts a senior real estate specialist, an estate attorney, and a transition navigator on one team, working from a single phone call.</p>
+        <div class="cta-row">
+          <a href="#contact" class="btn-primary">Start a Conversation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM PHOTO -->
+  <section class="team-photo reveal">
+    <div class="wrap">
+      <div class="team-photo-row">
+        <div class="tp-avatar"><img src="assets/valerie-van-pelt.png" alt="Valerie Van Pelt"></div>
+        <div class="tp-avatar"><img src="assets/lori-olson.png" alt="Lori Olson"></div>
+        <div class="tp-avatar"><img src="assets/aaron-miller.png" alt="Aaron Miller"></div>
+        <div class="tp-avatar"><img src="assets/jim-whiddon.png" alt="Jim Whiddon"></div>
+        <div class="tp-avatar"><img src="assets/johnathan-whiddon.png" alt="Johnathan Whiddon"></div>
+      </div>
+      <p class="team-photo-caption">Valerie Van Pelt · Lori Olson · Aaron Miller · Jim Whiddon · Johnathan Whiddon</p>
+      <div class="tp-actions">
+        <a class="tp-btn" href="team.html">Meet the full collective</a>
+        <a class="tp-btn solid" href="https://www.compass.com/agents/valerie-van-pelt/" target="_blank" rel="noopener">View Valerie's Listings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REALITY -->
+  <section class="reality reveal">
+    <div class="section-photo op-light" style="background-image:url('assets/bg-reality.jpg')"></div>
+    <div class="wrap grid">
+      <div>
+        <span class="eyebrow">What Usually Happens</span>
+        <h2>Most Families Assemble This Team Anyway, Just in the Wrong Order</h2>
+      </div>
+      <div class="body">
+        <p>A parent falls, or a diagnosis changes everything, or someone finally says the thing everyone's been thinking privately for months. Suddenly there's a house to deal with, a will that hasn't been touched in a decade, and three siblings trying to agree on a senior living community none of them have actually toured.</p>
+        <p>Normally, you find each of these people separately: a realtor from a yard sign, an attorney from a search result, a moving company from a flyer on the fridge. Somewhere in the middle of it, you become the one holding all the pieces together, retelling the same story to every new person you call.</p>
+        <p class="pull">Collective Moves exists because holding it all together shouldn't fall on you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-photo op-light" style="background-image:url('assets/bg-services.jpg')"></div>
+    <div class="wrap">
+      <div class="services-head reveal">
+        <span class="eyebrow">One Call, Multiple Experts</span>
+        <h2>One Conversation Starts All of It</h2>
+        <p>Make the call, and you're not just hiring a real estate agent. You're opening a line to everyone your family is likely to need over the next few months, introduced in the right order, without you managing the handoffs yourself.</p>
+      </div>
+
+      <div class="spine">
+
+        <div class="service-row reveal">
+          <div class="text side">
+            <span class="tag-num">I.</span>
+            <h3>SRES® Realtor</h3>
+            <p>A REALTOR® trained specifically in the realities of a senior sale: staging around mobility needs, timing a closing around a care transition, and pricing a home that may not have been appraised in thirty years.</p>
+          </div>
+          <div class="spacer side empty"></div>
+          <div class="node"><svg viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.7"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1Z" stroke-linejoin="round"/></svg></div>
+        </div>
+
+        <div class="service-row reveal">
+          <div class="spacer side empty"></div>
+          <div class="text side">
+            <span class="tag-num">II.</span>
+            <h3>Financial Planning Resources</h3>
+            <p>Referrals to financial professionals who can answer the harder question underneath the sale: does this plan actually fund the next ten years, and what happens if it needs to fund twenty?</p>
+          </div>
+          <div class="node"><svg viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.7"><path d="M3 17 9 11l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6h5v5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+
+        <div class="service-row reveal">
+          <div class="text side">
+            <span class="tag-num">III.</span>
+            <h3>Elder Law &amp; Estate Planning</h3>
+            <p>A wills-trusts-and-probate attorney who makes sure the sale of a home doesn't leave a legal tangle behind for whoever inherits what's left.</p>
+          </div>
+          <div class="spacer side empty"></div>
+          <div class="node"><svg viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.7"><path d="M12 3v3M4 8h16M7 8l-3.5 7a3.5 3.5 0 0 0 7 0L7 8Zm10 0l-3.5 7a3.5 3.5 0 0 0 7 0L17 8ZM7 20h10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+
+        <div class="service-row reveal">
+          <div class="spacer side empty"></div>
+          <div class="text side">
+            <span class="tag-num">IV.</span>
+            <h3>Senior Living Navigation</h3>
+            <p>Someone who has actually walked the halls of the communities being considered, and can tell a family honestly which ones are worth the drive to tour.</p>
+          </div>
+          <div class="node"><svg viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.7"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z" stroke-linejoin="round"/><path d="M12 20v-5a2 2 0 0 1 4 0" stroke-linecap="round"/></svg></div>
+        </div>
+
+        <div class="service-row reveal">
+          <div class="text side">
+            <span class="tag-num">V.</span>
+            <h3>Downsizing, Space Planning &amp; Moving</h3>
+            <p>A plan for decades of belongings: what's sold, what's donated, what's kept, and who in the family gets to decide what. The new place is measured and laid out first, so everything that comes along is known to fit.</p>
+          </div>
+          <div class="spacer side empty"></div>
+          <div class="node"><svg viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.7"><rect x="4" y="8" width="16" height="12" rx="1"/><path d="M4 8 12 4l8 4" stroke-linejoin="round"/><path d="M12 4v4" /></svg></div>
+        </div>
+
+        <div class="service-row reveal">
+          <div class="spacer side empty"></div>
+          <div class="text side">
+            <span class="tag-num">VI.</span>
+            <h3>Senior Moving</h3>
+            <p>A crew that specializes in moving people who've lived in one place a long time, not just moving boxes, but moving a life with some care.</p>
+          </div>
+          <div class="node"><svg viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.7"><circle cx="8" cy="18" r="1.6"/><circle cx="16" cy="7" r="1.6"/><path d="M8 16 9 10l4-1 1 4 3 1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission">
+    <div class="section-photo op-dark" style="background-image:url('assets/bg-mission.jpg')"></div>
+    <div class="wrap mission-inner reveal">
+      <span class="eyebrow">Our Mission</span>
+      <blockquote>To provide trusted guidance and resources that empower seniors and their families to make confident decisions for life's next chapter.</blockquote>
+      <cite>The Collective Moves Mission</cite>
+    </div>
+  </section>
+
+  <!-- BETTER TOGETHER -->
+  <section class="together" id="together">
+    <div class="section-photo op-dark" style="background-image:url('assets/bg-together.jpg')"></div>
+    <div class="wrap">
+      <div class="together-head reveal">
+        <span class="eyebrow">Better Together</span>
+        <h2>You Manage One Relationship. We Manage the Rest.</h2>
+        <p>This is the same team built over years of community seminars on senior transitions, now available to any family from the first phone call, not only seminar attendees.</p>
+      </div>
+
+      <div class="diagram-wrap reveal">
+        <div class="diagram">
+          <svg class="lines" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(248,244,236,0.18)" stroke-width="0.4" stroke-dasharray="2 2"/>
+            <line x1="50" y1="50" x2="50" y2="12" stroke="rgba(248,244,236,0.3)" stroke-width="0.5"/>
+            <line x1="50" y1="50" x2="86.1" y2="38.3" stroke="rgba(248,244,236,0.3)" stroke-width="0.5"/>
+            <line x1="50" y1="50" x2="72.3" y2="80.7" stroke="rgba(248,244,236,0.3)" stroke-width="0.5"/>
+            <line x1="50" y1="50" x2="27.7" y2="80.7" stroke="rgba(248,244,236,0.3)" stroke-width="0.5"/>
+            <line x1="50" y1="50" x2="13.9" y2="38.3" stroke="rgba(248,244,236,0.3)" stroke-width="0.5"/>
+          </svg>
+
+          <div class="dnode family" style="left:50%; top:50%;">
+            <div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.8"><path d="M12 21s-7-4.6-9.5-8.7C.6 8.9 2.3 5 6 5c2 0 3.3 1 4 2 1.7-2 6-2.6 7.5 1 1.7 4.1-.5 7.7-5.5 13Z" stroke-linejoin="round"/></svg></div>
+            <span>Your<br>Family</span>
+          </div>
+          <div class="dnode" style="left:50%; top:12%;">
+            <div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="#f8f4ec" stroke-width="1.7"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1Z" stroke-linejoin="round"/></svg></div>
+            <span>Senior Realtor</span>
+          </div>
+          <div class="dnode" style="left:86.1%; top:38.3%;">
+            <div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="#f8f4ec" stroke-width="1.7"><path d="M12 3v3M4 8h16M7 8l-3.5 7a3.5 3.5 0 0 0 7 0L7 8Zm10 0l-3.5 7a3.5 3.5 0 0 0 7 0L17 8ZM7 20h10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span>Estate Attorney</span>
+          </div>
+          <div class="dnode" style="left:72.3%; top:80.7%;">
+            <div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="#f8f4ec" stroke-width="1.7"><rect x="4" y="8" width="16" height="12" rx="1"/><path d="M4 8 12 4l8 4" stroke-linejoin="round"/></svg></div>
+            <span>Moving Specialist</span>
+          </div>
+          <div class="dnode" style="left:27.7%; top:80.7%;">
+            <div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="#f8f4ec" stroke-width="1.7"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z" stroke-linejoin="round"/><path d="M12 20v-5a2 2 0 0 1 4 0" stroke-linecap="round"/></svg></div>
+            <span>Senior Navigator</span>
+          </div>
+          <div class="dnode" style="left:13.9%; top:38.3%;">
+            <div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="#f8f4ec" stroke-width="1.7"><path d="M20 12H4m0 0 5-5m-5 5 5 5" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="4" width="6" height="16" rx="1"/></svg></div>
+            <span>Downsizing Specialist</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagram-mobile reveal">
+        <div class="dm-row center"><strong>Your Family</strong><span>At the center of every decision</span></div>
+        <div class="dm-row"><strong>Senior Realtor</strong><span>Valerie Van Pelt, SRES®</span></div>
+        <div class="dm-row"><strong>Estate Attorney</strong><span>Aaron Miller</span></div>
+        <div class="dm-row"><strong>Moving Specialist</strong><span>Coordinated senior moving crew</span></div>
+        <div class="dm-row"><strong>Downsizing Specialist</strong><span>Lori Olson, downsizing, space planning &amp; moving</span></div>
+        <div class="dm-row"><strong>Senior Navigator</strong><span>Reserved, joining soon</span></div>
+      </div>
+
+      <p class="together-note reveal">No family is handed a stack of business cards and left to figure out the order of operations. <strong>Your senior realtor stays on every file from start to finish</strong>, bringing in each specialist only when the timeline actually calls for them.</p>
+    </div>
+  </section>
+
+  <!-- VOICES -->
+  <section class="voices" id="voices">
+    <div class="wrap">
+      <div class="quote-feature reveal">
+        <span class="eyebrow">Families We've Helped</span>
+        <q>I recently sold my home with the help of Valerie Van Pelt. I was particularly impressed with her marketing skills. My home was a unique architectural property at a significant price point and demanded the right representation. She took great care staging it and creating a plan that reached the right buyers. My home had multiple offers on the day of our open house and sold well above the listing price.</q>
+        <p class="attr">Peter, home seller &amp; repeat buyer</p>
+      </div>
+      <div class="voices-side">
+        <div class="mini-quote reveal">
+          <p>"We followed Valerie's lead on preparation before it hit the market. She suggested a pre-inspection, which was invaluable. We sold on the first day for the price we wanted, and received another full-price offer the second day."</p>
+          <div class="attr">David Whitney, on selling his parents' home</div>
+        </div>
+        <div class="mini-quote reveal">
+          <p>"Valerie demonstrated patience and knowledge as we searched for a retirement home. Her negotiation skill was beneficial in purchasing our new home and selling our current one. She made the experience far less stressful."</p>
+          <div class="attr">Bonnie Taylor, retirement relocation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-photo op-light" style="background-image:url('assets/bg-contact.jpg')"></div>
+    <div class="wrap grid">
+      <div>
+        <span class="eyebrow">Let's Talk</span>
+        <h2>The First Call Is Just a Conversation</h2>
+        <p class="lede">No pressure, no obligation, no packet of forms to fill out first. Tell us what's going on: the house, the timeline, the family situation. We'll tell you honestly who on the team needs to be involved, and when.</p>
+      </div>
+      <div class="form-card">
+        <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thank you, we\'ll be in touch soon.';">
+          <div class="form-row">
+            <label for="name">Your Name</label>
+            <input id="name" type="text" placeholder="Jane Reynolds" required>
+          </div>
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="(214) 000-0000" required>
+          </div>
+          <div class="form-row">
+            <label for="who">Who Are You Looking to Help?</label>
+            <select id="who">
+              <option>Myself</option>
+              <option>A parent</option>
+              <option>Another family member</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="msg">What's Going On?</label>
+            <textarea id="msg" placeholder="A short note is fine. Every message is read personally."></textarea>
+          </div>
+          <button type="submit">Send Your Message</button>
+        </form>
+        <p class="form-note">Every message is read personally, never a call center.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/collective-moves-logo.png" alt="Collective Moves: Gathered together, Moving you forward">
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Site</h4>
+          <a href="team.html">Meet the Collective</a>
+          <a href="#services">How It Works</a>
+          <a href="#together">Better Together</a>
+          <a href="resources.html">Resources</a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span id="year-line">© 2026 Collective Moves</span>
+      <span class="legal">Valerie Van Pelt is a REALTOR® with Compass RE Texas, LLC. Collective Moves is an independent network of professionals; each provides services under their own license and business.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year-line').textContent = '© ' + new Date().getFullYear() + ' Collective Moves';
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

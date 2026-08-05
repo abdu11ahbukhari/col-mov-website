@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valuable Resources | Collective Moves</title>
+<meta name="description" content="Free books, guides, and resources on downsizing, estate planning, aging in place, caregiving, and senior living, curated by Collective Moves.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23171717'/%3E%3Ctext x='50' y='63' font-family='Georgia,serif' font-size='38' fill='%23ffffff' text-anchor='middle'%3ECM%3C/text%3E%3C/svg%3E">
+<style>
+
+  /* Palette matched to compass.com: near-black ink on white, a classic
+     serif for headlines (falls back exactly the way Compass's own
+     "Compass Serif" does) and a neutral grotesque for everything else.
+     The four brand colors are kept only inside the Collective Moves
+     compass mark itself; everywhere else the site runs monochrome. */
+  :root{
+    --navy: #171717;
+    --navy-deep: #0a0a0a;
+    --gold: #63636b;
+    --teal: #171717;
+    --green: #71975a;
+    --purple: #7d5aa3;
+    --cream: #f7f7f5;
+    --paper: #ffffff;
+    --ink: #171717;
+    --ink-soft: #58585c;
+    --line: #e2e2e0;
+    --serif: Georgia, 'Times New Roman', Times, serif;
+    --sans: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{ max-width: 100%; display: block; }
+  a{ color: inherit; }
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .eyebrow{
+    font-size: 12.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold);
+  }
+  h1,h2,h3{
+    font-family: var(--serif);
+    font-weight: 400;
+    margin: 0;
+    color: var(--navy);
+  }
+  .reveal{
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.in{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- SECTION BACKGROUND PHOTOS ---------- */
+  .section-photo{
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 14%, rgba(0,0,0,1) 86%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 14%, rgba(0,0,0,1) 86%, rgba(0,0,0,0) 100%);
+  }
+  .section-photo.op-light{ opacity: 0.13; }
+  .section-photo.op-dark{ opacity: 0.32; }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 32px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .brand{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .brand img{
+    height: 160px;
+    width: auto;
+    display: block;
+  }
+  nav.main-links{
+    display: flex;
+    align-items: center;
+    gap: 34px;
+  }
+  nav.main-links a{
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--ink);
+    opacity: 0.82;
+  }
+  nav.main-links a:hover{ opacity: 1; color: var(--navy); }
+  .nav-pill{
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 9999px;
+    padding: 7px 16px;
+    opacity: 1 !important;
+  }
+  .nav-pill:hover{ background: var(--line) !important; color: var(--navy); }
+  .nav-cta{
+    background: var(--navy);
+    color: var(--paper) !important;
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 1 !important;
+    border: 1px solid var(--navy);
+  }
+  .nav-toggle{ display:none; background:none; border:none; cursor:pointer; }
+  @media (max-width: 880px){
+    nav.main-links{
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: var(--paper);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 32px 28px;
+      border-bottom: 1px solid var(--line);
+      display: none;
+      gap: 18px;
+    }
+    nav.main-links.open{ display: flex; }
+    .nav-toggle{ display: block; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 28px 0 20px;
+    background: var(--paper);
+    overflow: hidden;
+    position: relative;
+  }
+  .hero .wrap{
+    max-width: 860px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1{
+    font-size: clamp(34px, 4.6vw, 54px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 18px 0 22px;
+  }
+  .hero .lede{
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin-bottom: 34px;
+  }
+  .hero .cta-row{ display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+  .btn-primary{
+    display: inline-block;
+    background: var(--navy);
+    color: var(--paper);
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 1px solid var(--navy);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-primary:hover{ background: var(--navy-deep); border-color: var(--navy-deep); }
+  .btn-ghost{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--navy);
+    border-bottom: 1.5px solid var(--navy);
+    padding-bottom: 3px;
+  }
+  /* ---------- TEAM PHOTO ---------- */
+  .team-photo{ padding: 8px 0 96px; background: var(--paper); }
+  .team-photo-row{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 26px;
+  }
+  .tp-avatar{
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .tp-avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .tp-avatar span{
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ink-soft);
+  }
+  .team-photo-caption{
+    text-align: center;
+    margin-top: 22px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 620px){
+    .team-photo-row{ gap: 14px; }
+    .tp-avatar{ width: 84px; height: 84px; }
+    .team-photo-caption{ font-size: 12px; padding: 0 12px; }
+  }
+
+  /* ---------- REALITY ---------- */
+  .reality{
+    padding: 100px 0;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  .reality .grid{
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+  .reality h2{
+    font-size: clamp(28px, 3.4vw, 38px);
+    line-height: 1.2;
+    margin-top: 14px;
+  }
+  .reality .body p{
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+  }
+  .reality .pull{
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.4vw, 27px);
+    color: var(--navy);
+    line-height: 1.4;
+    margin-top: 26px;
+    position: relative;
+    padding-left: 26px;
+    border-left: 3px solid var(--teal);
+  }
+  @media (max-width: 880px){
+    .reality .grid{ grid-template-columns: 1fr; gap: 30px; }
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services{
+    padding: 100px 0 110px;
+    background: var(--cream);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .services > .wrap{ position: relative; z-index: 1; }
+  .services-head{
+    max-width: 640px;
+    margin-bottom: 64px;
+  }
+  .services-head h2{
+    font-size: clamp(28px, 3.6vw, 40px);
+    margin-top: 14px;
+  }
+  .services-head p{
+    color: var(--ink-soft);
+    font-size: 16.5px;
+    margin-top: 18px;
+  }
+  .spine{
+    position: relative;
+  }
+  .spine::before{
+    content:'';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1.5px;
+    background: var(--line);
+    transform: translateX(-50%);
+  }
+  .service-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    padding: 38px 0;
+  }
+  .service-row .side{ padding: 0 56px; }
+  .service-row .side.empty{ }
+  .service-row:nth-child(odd) .text{ grid-column: 1; text-align: right; }
+  .service-row:nth-child(odd) .spacer{ grid-column: 2; }
+  .service-row:nth-child(even) .text{ grid-column: 2; text-align: left; order: 2; }
+  .service-row:nth-child(even) .spacer{ grid-column: 1; order: 1; }
+  .node{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .node svg{ width: 22px; height: 22px; }
+  .service-row h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .service-row p{
+    color: var(--ink-soft);
+    font-size: 15.3px;
+    margin: 0;
+  }
+  .tag-num{
+    display: inline-block;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  @media (max-width: 820px){
+    .spine::before{ left: 26px; }
+    .service-row{ grid-template-columns: 1fr; padding-left: 66px; }
+    .service-row .text, .service-row:nth-child(even) .text{
+      grid-column: 1; text-align: left; order: 0;
+    }
+    .service-row .spacer, .service-row:nth-child(even) .spacer{ display: none; }
+    .node{ left: 26px; top: 6px; transform: translate(-50%,0); }
+  }
+
+  /* ---------- MISSION BAND ---------- */
+  .mission{
+    background: var(--navy);
+    color: var(--cream);
+    padding: 110px 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .mission::before{
+    content:'';
+    position: absolute;
+    width: 620px; height: 620px;
+    border: 1px solid rgba(248,244,236,0.08);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .mission::after{
+    content:'';
+    position: absolute;
+    width: 460px; height: 460px;
+    border: 1px solid rgba(248,244,236,0.08);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .mission-inner{ position: relative; z-index: 2; max-width: 780px; margin: 0 auto; }
+  .mission .eyebrow{ color: rgba(248,244,236,0.6); }
+  .mission blockquote{
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(24px, 3.4vw, 36px);
+    line-height: 1.45;
+    margin: 22px 0 0;
+  }
+  .mission cite{
+    display: block;
+    margin-top: 26px;
+    font-style: normal;
+    font-size: 13.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(248,244,236,0.6);
+  }
+
+  /* ---------- TEAM ---------- */
+  .team{ padding: 110px 0; background: var(--paper); }
+  .team-head{ max-width: 620px; margin-bottom: 70px; }
+  .team-head h2{ font-size: clamp(28px, 3.6vw, 40px); margin-top: 14px; }
+  .team-head p{ color: var(--ink-soft); font-size: 16.5px; margin-top: 18px; }
+
+  .profile{
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+    align-items: center;
+    padding: 56px 0;
+    border-top: 1px solid var(--line);
+  }
+  .team > .wrap > .profile:first-of-type{ border-top: none; padding-top: 0; }
+  .profile.reverse{ grid-template-columns: 1.15fr 0.85fr; }
+  .profile.reverse .photo{ order: 2; }
+  .profile.reverse .content{ order: 1; }
+
+  .photo{
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    background: linear-gradient(155deg, var(--cream), #eee5d0);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .content .role{
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .content h3{
+    font-size: clamp(24px, 2.6vw, 30px);
+    margin: 8px 0 16px;
+  }
+  .content p{
+    color: var(--ink-soft);
+    font-size: 15.6px;
+    margin: 0 0 14px;
+  }
+  .content .with-team{
+    font-size: 14px;
+    color: var(--navy);
+    background: var(--cream);
+    border-left: 2px solid var(--teal);
+    padding: 10px 14px;
+    margin-top: 18px;
+  }
+  @media (max-width: 820px){
+    .profile, .profile.reverse{ grid-template-columns: 1fr; gap: 24px; }
+    .profile.reverse .photo{ order: 0; }
+    .profile.reverse .content{ order: 0; }
+    .photo{ max-width: 260px; }
+  }
+
+  /* ---------- BETTER TOGETHER ---------- */
+  .together{
+    background: var(--navy-deep);
+    color: var(--cream);
+    padding: 120px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .together > .wrap{ position: relative; z-index: 1; }
+  .together-head{ max-width: 640px; margin: 0 auto 60px; text-align: center; }
+  .together .eyebrow{ color: rgba(248,244,236,0.6); }
+  .together-head h2{ color: var(--paper); font-size: clamp(28px, 3.6vw, 40px); margin-top: 14px; }
+  .together-head p{ color: rgba(248,244,236,0.68); font-size: 16.5px; margin-top: 18px; }
+
+  .diagram-wrap{
+    max-width: 620px;
+    margin: 0 auto 56px;
+  }
+  .diagram{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+  .diagram svg.lines{
+    position: absolute; inset: 0; width: 100%; height: 100%;
+  }
+  .dnode{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 132px;
+  }
+  .dnode .bubble{
+    width: 84px; height: 84px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: rgba(248,244,236,0.06);
+    border: 1px solid rgba(248,244,236,0.28);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .dnode svg{ width: 30px; height: 30px; }
+  .dnode span{ font-size: 12.5px; font-weight: 600; line-height: 1.3; color: rgba(248,244,236,0.88); }
+  .dnode.family .bubble{
+    width: 118px; height: 118px;
+    background: var(--paper);
+    border: none;
+  }
+  .dnode.family svg{ width: 40px; height: 40px; }
+  .dnode.family span{ font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--navy-deep); }
+
+  .diagram-mobile{ display: none; }
+
+  @media (max-width: 720px){
+    .diagram-wrap{ display: none; }
+    .diagram-mobile{
+      display: block;
+      max-width: 460px;
+      margin: 0 auto;
+      position: relative;
+      padding-left: 30px;
+    }
+    .diagram-mobile::before{
+      content:'';
+      position: absolute;
+      left: 9px; top: 8px; bottom: 8px;
+      width: 1.5px;
+      background: rgba(248,244,236,0.22);
+    }
+    .dm-row{ position: relative; padding: 0 0 28px 26px; }
+    .dm-row::before{
+      content:'';
+      position: absolute;
+      left: -21px; top: 4px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: rgba(248,244,236,0.55);
+    }
+    .dm-row.center::before{ background: var(--cream); width: 14px; height: 14px; left: -23px; }
+    .dm-row strong{ display:block; font-size: 15px; color: var(--paper); margin-bottom: 3px; }
+    .dm-row span{ font-size: 13.5px; color: rgba(248,244,236,0.65); }
+  }
+
+  .together-note{
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: rgba(248,244,236,0.7);
+    padding-top: 30px;
+    border-top: 1px solid rgba(248,244,236,0.14);
+  }
+  .together-note strong{ color: var(--paper); }
+
+  /* ---------- VOICES ---------- */
+  .voices{ padding: 110px 0; background: var(--cream); }
+  .voices .wrap{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 70px;
+  }
+  .quote-feature .eyebrow{ margin-bottom: 16px; display:block; }
+  .quote-feature q{
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.6vw, 30px);
+    line-height: 1.5;
+    color: var(--navy);
+    quotes: none;
+  }
+  .quote-feature .attr{
+    margin-top: 22px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+  .voices-side{
+    border-left: 1px solid var(--line);
+    padding-left: 44px;
+  }
+  .mini-quote{ margin-bottom: 34px; }
+  .mini-quote:last-child{ margin-bottom: 0; }
+  .mini-quote p{
+    font-size: 15.3px;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+    font-style: italic;
+  }
+  .mini-quote .attr{ font-size: 13px; font-weight: 600; color: var(--navy); }
+  @media (max-width: 880px){
+    .voices .wrap{ grid-template-columns: 1fr; gap: 40px; }
+    .voices-side{ border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 34px; }
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{ padding: 110px 0; background: var(--paper); position: relative; overflow: hidden; }
+  .contact > .wrap{ position: relative; z-index: 1; }
+  .contact .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+  }
+  .contact h2{ font-size: clamp(28px, 3.6vw, 38px); margin-top: 14px; }
+  .contact .lede{ color: var(--ink-soft); font-size: 16.5px; margin-top: 18px; max-width: 42ch; }
+
+  .form-card{
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 38px;
+  }
+  .form-card label{
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .form-row{ margin-bottom: 20px; }
+  .form-row input, .form-row textarea, .form-row select{
+    width: 100%;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    border-radius: 3px;
+    padding: 12px 14px;
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+  .form-row textarea{ resize: vertical; min-height: 90px; }
+  .form-card button{
+    width: 100%;
+    background: var(--navy);
+    color: var(--paper);
+    border: none;
+    padding: 15px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .form-card button:hover{ background: var(--navy-deep); }
+  .form-note{ font-size: 12.5px; color: var(--ink-soft); margin-top: 12px; text-align: center; }
+  @media (max-width: 880px){ .contact .grid{ grid-template-columns: 1fr; gap: 40px; } }
+
+  /* ---------- FOOTER ---------- */
+  footer.site-footer{
+    background: var(--navy-deep);
+    color: rgba(248,244,236,0.75);
+    padding: 60px 0 32px;
+  }
+  .footer-top{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(248,244,236,0.14);
+  }
+  .footer-brand{
+    display: flex;
+    align-items: center;
+    background: var(--paper);
+    padding: 14px 22px;
+    border-radius: 6px;
+  }
+  .footer-brand img{ height: 84px; width: auto; display: block; }
+  .footer-links{ display: flex; gap: 40px; flex-wrap: wrap; }
+  .footer-links div h4{
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(248,244,236,0.5); margin: 0 0 12px; font-weight: 600;
+  }
+  .footer-links a{ display: block; font-size: 14px; text-decoration: none; color: rgba(248,244,236,0.82); margin-bottom: 9px; }
+  .footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding-top: 26px;
+    font-size: 12.5px;
+    color: rgba(248,244,236,0.5);
+  }
+  .footer-bottom .legal{ max-width: 640px; }
+
+  ::selection{ background: var(--ink); color: var(--paper); }
+
+  /* ---------- RESOURCES PAGE ---------- */
+  .res-hero{ padding: 56px 0 70px; background: var(--paper); }
+  .res-hero .wrap{ max-width: 780px; }
+  .res-hero h1{
+    font-size: clamp(32px, 4.4vw, 46px);
+    line-height: 1.15;
+    margin: 16px 0 22px;
+  }
+  .res-hero .lede{ font-size: 17.5px; color: var(--ink-soft); max-width: 62ch; }
+  .res-hero .lede + .lede{ margin-top: 16px; }
+
+  .res-nav{
+    background: var(--cream);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+    position: sticky;
+    top: 181px;
+    z-index: 20;
+  }
+  .res-nav .wrap{ display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .res-nav a{
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .res-nav a:hover{ color: var(--navy); }
+
+  .res-section{
+    padding: 64px 0;
+    border-top: 1px solid var(--line);
+  }
+  main > .res-section:first-of-type{ border-top: none; }
+  .res-section .grid{
+    display: grid;
+    grid-template-columns: 0.62fr 1.38fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .res-label .num{
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .res-label h2{
+    font-size: clamp(21px, 2.2vw, 26px);
+    line-height: 1.25;
+  }
+  .res-items{ display: flex; flex-direction: column; gap: 30px; }
+
+  .book h3{
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 19px;
+    color: var(--navy);
+    margin: 0 0 4px;
+  }
+  .book .byline{
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+  }
+  .book p.desc{ font-size: 15px; color: var(--ink-soft); margin: 0; }
+
+  .org-callout{
+    border-left: 2px solid var(--ink);
+    padding-left: 18px;
+  }
+  .org-callout h3{
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0 0 6px;
+  }
+  .org-callout p.desc{ font-size: 15px; color: var(--ink-soft); margin: 0 0 6px; }
+  .org-callout ul{ margin: 8px 0 10px; padding-left: 18px; }
+  .org-callout li{ font-size: 14.5px; color: var(--ink-soft); margin-bottom: 4px; }
+  .org-callout a{
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--line);
+  }
+  .org-callout a:hover{ border-bottom-color: var(--navy); }
+
+  .res-note{
+    font-size: 14px;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  .guides-section{
+    background: var(--navy-deep);
+    color: var(--cream);
+    padding: 80px 0;
+  }
+  .guides-head{ max-width: 680px; margin-bottom: 46px; }
+  .guides-head .eyebrow{ color: rgba(248,244,236,0.6); }
+  .guides-head h2{ color: var(--paper); font-size: clamp(26px, 3.2vw, 36px); margin-top: 14px; }
+  .guides-head p{ color: rgba(248,244,236,0.68); font-size: 16px; margin-top: 16px; }
+  .guide-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+  }
+  .guide-list div{
+    padding: 16px 0;
+    border-top: 1px solid rgba(248,244,236,0.14);
+    font-size: 15px;
+    color: rgba(248,244,236,0.88);
+  }
+  .guide-list div:nth-last-child(-n+1){ }
+  @media (max-width: 720px){
+    .guide-list{ grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 820px){
+    .res-section .grid{ grid-template-columns: 1fr; gap: 18px; }
+    .res-nav{ position: static; }
+  }
+
+
+  /* ---- Resource cards with covers ---- */
+  .res-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
+    gap: 40px 30px;
+    align-items: start;
+  }
+  .res-items.single{ grid-template-columns: repeat(auto-fill, minmax(196px, 1fr)); }
+
+  .book{ display: flex; flex-direction: column; }
+
+  .cover{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 8px 24px rgba(0,0,0,0.07);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .book:hover .cover{
+    transform: translateY(-3px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 14px 34px rgba(0,0,0,0.11);
+  }
+  .cover img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* Typographic fallback shown when no cover image loads */
+  .cover .fallback{
+    position: absolute; inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 16px;
+    background: var(--cream);
+    border-left: 4px solid var(--ink);
+  }
+  .cover.no-img img{ display: none; }
+  .cover.no-img .fallback{ display: flex; }
+  .cover .fallback .ft{
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.28;
+    color: var(--ink);
+  }
+  .cover .fallback .fa{
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .book h3{
+    font-family: var(--serif);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.5px;
+    line-height: 1.3;
+    color: var(--navy);
+    margin: 0 0 5px;
+  }
+  .book .byline{
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 9px;
+  }
+  .book p.desc{
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 12px;
+  }
+
+  /* Action links / download buttons */
+  .res-action{
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: auto;
+    font-family: var(--sans);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--navy);
+    text-decoration: none;
+    padding: 8px 14px;
+    border: 1px solid var(--ink);
+    border-radius: 6px;
+    background: transparent;
+    transition: background .2s ease, color .2s ease;
+    align-self: flex-start;
+  }
+  .res-action:hover{ background: var(--ink); color: var(--paper); }
+  .res-action svg{ flex: none; }
+  .res-action.solid{ background: var(--ink); color: var(--paper); }
+  .res-action.solid:hover{ background: var(--navy-deep); }
+  .res-action.disabled{
+    border-color: var(--line);
+    color: var(--ink-soft);
+    pointer-events: none;
+    background: var(--cream);
+  }
+
+  /* Organisation guide cards */
+  .org-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 26px;
+  }
+  .org-callout{
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--ink);
+    border-radius: 4px;
+    padding: 24px 22px;
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+  }
+  .org-callout h3{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0 0 8px;
+  }
+  .org-callout p.desc{ font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 10px; }
+  .org-callout ul{ margin: 0 0 16px; padding-left: 17px; }
+  .org-callout li{ font-size: 13.5px; color: var(--ink-soft); margin-bottom: 5px; }
+
+  /* Our own downloadable guides */
+  .guide-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+    gap: 26px;
+  }
+  .guide-card{
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(248,244,236,0.16);
+    border-radius: 5px;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .guide-card .gdoc{
+    width: 34px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(248,244,236,0.28);
+    border-radius: 3px;
+    color: rgba(248,244,236,0.7);
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+  }
+  .guide-card h3{
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.32;
+    color: var(--paper);
+    margin: 0;
+  }
+  .guide-card .res-action{
+    color: var(--paper);
+    border-color: rgba(248,244,236,0.4);
+  }
+  .guide-card .res-action:hover{ background: var(--paper); color: var(--navy-deep); }
+  .guide-card .res-action.disabled{
+    background: transparent;
+    border-color: rgba(248,244,236,0.16);
+    color: rgba(248,244,236,0.45);
+  }
+
+  @media (max-width: 560px){
+    .res-items{ grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 30px 20px; }
+    .book h3{ font-size: 15px; }
+  }
+
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html#top" class="brand">
+      <img src="assets/collective-moves-logo.png" alt="Collective Moves: Gathered together, Moving you forward">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.main-links').classList.toggle('open')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="main-links">
+      <a href="team.html" class="nav-pill">Meet the Collective</a>
+      <a href="index.html#services">How It Works</a>
+      <a href="index.html#together">Better Together</a>
+      <a href="index.html#voices">Families We've Helped</a>
+      <a href="resources.html" class="nav-pill">Resources</a>
+      <a href="index.html#contact" class="nav-cta">Start a Conversation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- RESOURCE HERO -->
+  <section class="res-hero">
+    <div class="wrap">
+      <span class="eyebrow">For Families · Free to Use</span>
+      <h1>A Library, Not a Sales Pitch</h1>
+      <p class="lede">Our job is to help you make a confident decision, not to sell you one. Most of what's below isn't ours: it's the books and free guides we keep coming back to on downsizing, estate planning, aging in place, caregiving, and everything in between.</p>
+      <p class="lede">Bookmark this page. New sections get added as we find things worth sharing.</p>
+    </div>
+  </section>
+
+  <nav class="res-nav">
+    <div class="wrap">
+      <a href="#downsizing">Downsizing</a>
+      <a href="#next-move">Planning Your Next Move</a>
+      <a href="#documents">Organizing Documents</a>
+      <a href="#estate">Estate Planning</a>
+      <a href="#aging-in-place">Aging in Place</a>
+      <a href="#living-options">Senior Living Options</a>
+      <a href="#caregiving">Caregiving</a>
+      <a href="#scams">Scams &amp; Fraud</a>
+      <a href="#maintenance">Home Maintenance</a>
+      <a href="#end-of-life">End-of-Life Planning</a>
+      <a href="#guides">Our Own Guides</a>
+    </div>
+  </nav>
+
+  <!-- DOWNSIZING -->
+  <section class="res-section" id="downsizing">
+    <div class="wrap grid">
+      <div class="res-label">
+        <span class="num">I.</span>
+        <h2>Downsizing &amp; Decluttering</h2>
+      </div>
+      <div class="res-items">
+
+        <div class="book">
+          <div class="cover">
+            <img src="https://covers.openlibrary.org/b/isbn/9781501173240-L.jpg" alt="The Gentle Art of Swedish Death Cleaning" loading="lazy">
+            <div class="fallback"><span class="ft">The Gentle Art of Swedish Death Cleaning</span><span class="fa">Margareta Magnusson</span></div>
+          </div>
+          <h3>The Gentle Art of Swedish Death Cleaning</h3>
+          <p class="byline">Margareta Magnusson</p>
+          <p class="desc">One of the most recommended books on this list. Despite the title, it's really about simplifying life and lightening the load you leave behind for the people who love you.</p>
+          <a class="res-action" href="https://openlibrary.org/search?q=The+Gentle+Art+of+Swedish+Death+Cleaning" target="_blank" rel="noopener">Find this book</a>
+        </div>
+
+        <div class="book">
+          <div class="cover">
+            <img src="https://covers.openlibrary.org/b/isbn/9781454919582-L.jpg" alt="Downsizing the Family Home" loading="lazy">
+            <div class="fallback"><span class="ft">Downsizing the Family Home</span><span class="fa">Marni Jameson</span></div>
+          </div>
+          <h3>Downsizing the Family Home: What to Save, What to Let Go</h3>
+          <p class="byline">Marni Jameson</p>
+          <p class="desc">Written for both sides of the conversation: the parent letting go of a house, and the adult child helping them do it without a fight.</p>
+          <a class="res-action" href="https://openlibrary.org/search?q=Downsizing+the+Family+Home+Marni+Jameson" target="_blank" rel="noopener">Find this book</a>
+        </div>
+
+        <div class="book">
+          <div class="cover">
+            <img src="https://covers.openlibrary.org/b/isbn/9781607747307-L.jpg" alt="The Life-Changing Magic of Tidying Up" loading="lazy">
+            <div class="fallback"><span class="ft">The Life-Changing Magic of Tidying Up</span><span class="fa">Marie Kondo</span></div>
+          </div>
+          <h3>The Life-Changing Magic of Tidying Up</h3>
+          <p class="byline">Marie Kondo</p>
+          <p class="desc">Not written with seniors in mind, but the decision-making method (does this still serve you) is one a lot of our clients end up using anyway.</p>
+          <a class="res-action" href="https://openlibrary.org/search?q=The+Life-Changing+Magic+of+Tidying+Up" target="_blank" rel="noopener">Find this book</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANNING NEXT MOVE -->
+  <section class="res-section" id="next-move">
+    <div class="wrap grid">
+      <div class="res-label">
+        <span class="num">II.</span>
+        <h2>Planning Your Next Move</h2>
+      </div>
+      <div class="res-items">
+
+        <div class="book">
+          <div class="cover">
+            <img src="https://covers.openlibrary.org/b/isbn/9780446579919-L.jpg" alt="Rightsizing Your Life" loading="lazy">
+            <div class="fallback"><span class="ft">Rightsizing Your Life</span><span class="fa">Ciji Ware</span></div>
+          </div>
+          <h3>Rightsizing Your Life</h3>
+          <p class="byline">Ciji Ware</p>
+          <p class="desc">Framed around moving toward the next chapter, not just shrinking the current one.</p>
+          <a class="res-action" href="https://openlibrary.org/search?q=Rightsizing+Your+Life+Ciji+Ware" target="_blank" rel="noopener">Find this book</a>
+        </div>
+
+        <div class="book">
+          <div class="cover">
+            <img src="https://covers.openlibrary.org/b/isbn/9780969419495-L.jpg" alt="How to Retire Happy, Wild, and Free" loading="lazy">
+            <div class="fallback"><span class="ft">How to Retire Happy, Wild, and Free</span><span class="fa">Ernie J. Zelinski</span></div>
+          </div>
+          <h3>How to Retire Happy, Wild, and Free</h3>
+          <p class="byline">Ernie J. Zelinski</p>
+          <p class="desc">Less about the house and the move, more about what fills the years that come after it.</p>
+          <a class="res-action" href="https://openlibrary.org/search?q=How+to+Retire+Happy+Wild+and+Free" target="_blank" rel="noopener">Find this book</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ORGANIZING DOCUMENTS -->
+  <section class="res-section" id="documents">
+    <div class="wrap grid">
+      <div class="res-label">
+        <span class="num">III.</span>
+        <h2>Organizing Important Documents</h2>
+      </div>
+      <div class="res-items">
+
+        <div class="book">
+          <div class="cover">
+            <img src="https://covers.openlibrary.org/b/isbn/9781441317995-L.jpg" alt="I'm Dead, Now What?" loading="lazy">
+            <div class="fallback"><span class="ft">I'm Dead, Now What?</span><span class="fa">Workbook</span></div>
+          </div>
+          <h3>I'm Dead, Now What?</h3>
+          <p class="byline">Workbook</p>
+          <p class="desc">A fill-in-the-blank workbook for organizing passwords, accounts, legal documents, insurance, contacts, and final wishes, so nobody has to guess later.</p>
+          <a class="res-action" href="https://openlibrary.org/search?q=I%27m+Dead+Now+What+workbook" target="_blank" rel="noopener">Find this book</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTATE PLANNING -->
+  <section class="res-section" id="estate">
+    <div class="wrap grid">
+      <div class="res-label">
+        <span class="num">IV.</span>
+        <h2>Estate Planning</h2>
+      </div>
+      <div class="org-grid">
+        <div class="org-callout">
+          <h3>AARP</h3>
+          <p class="desc">Free, plain-language guides covering:</p>
+          <ul>
+            <li>Estate planning basics</li>
+            <li>Wills</li>
+            <li>Powers of attorney</li>
+            <li>Healthcare directives</li>
+            <li>Organizing financial documents</li>
+          </ul>
+          <a class="res-action" href="https://www.aarp.org" target="_blank" rel="noopener">Read at aarp.org</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGING IN PLACE -->
+  <section class="res-section" id="aging-in-place">
+    <div class="wrap grid">
+      <div class="res-label">
+        <span class="num">V.</span>
+        <h2>Aging in Place</h2>
+      </div>
+      <div class="org-grid">
+        <div class="org-callout">
+          <h3>National Institute on Aging</h3>
+          <p class="desc">Free, well-researched PDFs, some of the highest-quality material available on this subject:</p>
+          <ul>
+            <li>Home safety</li>
+            <li>Preventing falls</li>
+            <li>Preparing to age at home</li>
+            <li>Caregiving</li>
+            <li>Medicare basics</li>
+          </ul>
+          <a class="res-action" href="https://www.nia.nih.gov" target="_blank" rel="noopener">Read at nia.nih.gov</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SENIOR LIVING OPTIONS -->
+  <section class="res-section" id="living-options">
+    <div class="wrap grid">
+      <div class="res-label">
+        <span class="num">VI.</span>
+        <h2>Senior Living Options</h2>
+      </div>
+      <div class="org-grid">
+        <div class="org-callout">
+          <h3>National Council on Aging</h3>
+          <p class="desc">Free guides covering:</p>
+          <ul>
+            <li>Independent living</li>
+            <li>Assisted living</li>
+            <li>Memory care</li>
+            <li>Paying for long-term care</li>
+            <li>Medicare and Medicaid</li>
+          </ul>
+          <a class="res-action" href="https://www.ncoa.org" target="_blank" rel="noopener">Read at ncoa.org</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREGIVING -->
+  <section class="res-section" id="caregiving">
+    <div class="wrap grid">
+      <div class="res-label">
+        <span class="num">VII.</span>
+        <h2>Caregiving</h2>
+      </div>
+      <div class="res-items">
+
+        <div class="book">
+          <div class="cover">
+            <img src="https://covers.openlibrary.org/b/isbn/9781421422244-L.jpg" alt="The 36-Hour Day" loading="lazy">
+            <div class="fallback"><span class="ft">The 36-Hour Day</span><span class="fa">Mace &amp; Rabins</span></div>
+          </div>
+          <h3>The 36-Hour Day</h3>
+          <p class="byline">Nancy L. Mace &amp; Peter V. Rabins</p>
+          <p class="desc">Considered the standard reference for families navigating dementia care.</p>
+          <a class="res-action" href="https://openlibrary.org/search?q=The+36-Hour+Day" target="_blank" rel="noopener">Find this book</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SCAMS & FRAUD -->
+  <section class="res-section" id="scams">
+    <div class="wrap grid">
+      <div class="res-label">
+        <span class="num">VIII.</span>
+        <h2>Scams &amp; Fraud</h2>
+      </div>
+      <div class="org-grid">
+        <div class="org-callout">
+          <h3>AARP Fraud Watch Network</h3>
+          <p class="desc">Free guides on the scams families ask us about most, the same material we cover in our community seminars:</p>
+          <ul>
+            <li>Wire fraud</li>
+            <li>Romance scams</li>
+            <li>Home title fraud</li>
+            <li>Contractor scams</li>
+            <li>Investment scams</li>
+          </ul>
+          <a class="res-action" href="https://www.aarp.org" target="_blank" rel="noopener">Read at aarp.org</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME MAINTENANCE -->
+  <section class="res-section" id="maintenance">
+    <div class="wrap grid">
+      <div class="res-label">
+        <span class="num">IX.</span>
+        <h2>Home Maintenance for Seniors</h2>
+      </div>
+      <div class="org-grid">
+        <div class="org-callout">
+          <h3>National Institute on Aging</h3>
+          <p class="desc">Free checklists covering:</p>
+          <ul>
+            <li>Home modifications</li>
+            <li>Fall prevention</li>
+            <li>Accessibility improvements</li>
+            <li>Emergency preparedness</li>
+          </ul>
+          <a class="res-action" href="https://www.nia.nih.gov" target="_blank" rel="noopener">Read at nia.nih.gov</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- END OF LIFE -->
+  <section class="res-section" id="end-of-life">
+    <div class="wrap grid">
+      <div class="res-label">
+        <span class="num">X.</span>
+        <h2>End-of-Life Planning</h2>
+      </div>
+      <div class="res-items">
+
+        <div class="book">
+          <div class="cover">
+            <img src="https://covers.openlibrary.org/b/isbn/9780805095159-L.jpg" alt="Being Mortal" loading="lazy">
+            <div class="fallback"><span class="ft">Being Mortal</span><span class="fa">Atul Gawande</span></div>
+          </div>
+          <h3>Being Mortal</h3>
+          <p class="byline">Atul Gawande</p>
+          <p class="desc">Widely considered one of the most thoughtful books written on aging with dignity and keeping independence for as long as possible.</p>
+          <a class="res-action" href="https://openlibrary.org/search?q=Being+Mortal+Atul+Gawande" target="_blank" rel="noopener">Find this book</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR OWN GUIDES -->
+  <section class="guides-section" id="guides">
+    <div class="wrap">
+      <div class="guides-head">
+        <span class="eyebrow">Coming From Collective Moves</span>
+        <h2>Guides We're Building</h2>
+        <p>Because Valerie specializes specifically in senior transitions, we're putting together our own set of free, practical, room-by-room guides. Each one becomes a direct download here as soon as it's finished.</p>
+      </div>
+      <div class="guide-list">
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>The Ultimate Downsizing Checklist (Room-by-Room)</h3><a class="res-action disabled" href="assets/guides/downsizing-checklist.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>90 Days Before You Move</h3><a class="res-action disabled" href="assets/guides/90-days-before-you-move.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>The Senior Moving Timeline</h3><a class="res-action disabled" href="assets/guides/senior-moving-timeline.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>What Adult Children Need to Know Before Helping Parents Move</h3><a class="res-action disabled" href="assets/guides/adult-children-guide.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>Questions to Ask When Touring Independent Living Communities</h3><a class="res-action disabled" href="assets/guides/touring-questions.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>Preparing Your Home for the Best Sale Price</h3><a class="res-action disabled" href="assets/guides/preparing-your-home.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>The Senior Home Maintenance Checklist</h3><a class="res-action disabled" href="assets/guides/home-maintenance-checklist.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>The Essential Documents Every Senior Should Have</h3><a class="res-action disabled" href="assets/guides/essential-documents.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>Emergency Contact &amp; Medical Information Worksheet</h3><a class="res-action disabled" href="assets/guides/emergency-worksheet.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>Moving Day Survival Guide</h3><a class="res-action disabled" href="assets/guides/moving-day-survival.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>What to Keep, Donate, Sell, or Give to Family</h3><a class="res-action disabled" href="assets/guides/keep-donate-sell.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>20 Common Senior Scams and How to Avoid Them</h3><a class="res-action disabled" href="assets/guides/senior-scams.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>The Conversation Starter Guide: Talking with Parents About Their Next Move</h3><a class="res-action disabled" href="assets/guides/conversation-starter.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>Your Aging-in-Place Home Safety Checklist</h3><a class="res-action disabled" href="assets/guides/aging-in-place-safety.pdf" download>In progress</a></div>
+        <div class="guide-card"><span class="gdoc">PDF</span><h3>The Complete Senior Resource Guide for Dallas</h3><a class="res-action disabled" href="assets/guides/dallas-resource-guide.pdf" download>In progress</a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/collective-moves-logo.png" alt="Collective Moves: Gathered together, Moving you forward">
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Site</h4>
+          <a href="team.html">Meet the Collective</a>
+          <a href="index.html#services">How It Works</a>
+          <a href="index.html#together">Better Together</a>
+          <a href="resources.html">Resources</a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span id="year-line">© 2026 Collective Moves</span>
+      <span class="legal">Valerie Van Pelt is a REALTOR® with Compass RE Texas, LLC. Collective Moves is an independent network of professionals; each provides services under their own license and business.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Show the typographic fallback when a cover image fails to load or is a blank placeholder
+  document.querySelectorAll('.cover img').forEach(function(img){
+    function fail(){ img.closest('.cover').classList.add('no-img'); }
+    img.addEventListener('error', fail);
+    img.addEventListener('load', function(){
+      if (img.naturalWidth < 20 || img.naturalHeight < 20) fail();
+    });
+    if (img.complete && img.naturalWidth === 0) fail();
+  });
+</script>
+
+<script>
+  document.getElementById('year-line').textContent = '© ' + new Date().getFullYear() + ' Collective Moves';
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
