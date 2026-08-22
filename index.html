@@ -755,6 +755,73 @@
   .photo.pending .pending-note{ font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); opacity: 0.75; }
   .tp-avatar.pending{ background: var(--cream); }
   .tp-avatar.pending svg{ color: #c9c9c6; }
+
+  /* ---- Team bubble hover: lift, highlight, reveal name ---- */
+  .tp-person{
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .38s cubic-bezier(.22,.61,.36,1),
+                opacity .3s ease, filter .3s ease;
+  }
+  .tp-person .tp-avatar{
+    display: flex;
+    transition: box-shadow .38s ease, border-color .3s ease;
+  }
+  .tp-person::after{
+    content: attr(data-name);
+    position: absolute;
+    top: calc(100% + 21px);
+    left: 50%;
+    transform: translate(-50%, -5px);
+    white-space: nowrap;
+    font-family: var(--sans);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--navy);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+  }
+
+  @media (hover: hover){
+    .team-photo-row:hover .tp-person{ opacity: .38; filter: grayscale(.4); }
+    .team-photo-row:hover .tp-person:hover{
+      opacity: 1;
+      filter: none;
+      transform: translateY(-8px) scale(1.13);
+      z-index: 3;
+    }
+    .team-photo-row:hover .tp-person:hover .tp-avatar{
+      border-color: var(--ink);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.18);
+    }
+    .team-photo-row:hover .tp-person:hover::after{
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+    .team-photo-row:hover + .team-photo-caption{ opacity: 0; }
+  }
+  .team-photo-caption{ transition: opacity .3s ease; }
+
+  .tp-person:focus-visible{
+    outline: none;
+    transform: translateY(-8px) scale(1.13);
+    z-index: 3;
+  }
+  .tp-person:focus-visible .tp-avatar{
+    border-color: var(--ink);
+    box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--ink);
+  }
+  .tp-person:focus-visible::after{ opacity: 1; transform: translate(-50%, 0); }
+
+  @media (prefers-reduced-motion: reduce){
+    .tp-person, .tp-person .tp-avatar, .tp-person::after, .team-photo-caption{ transition: none !important; }
+    .team-photo-row:hover .tp-person:hover, .tp-person:focus-visible{ transform: none !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -799,12 +866,24 @@
   <section class="team-photo reveal">
     <div class="wrap">
       <div class="team-photo-row">
-        <div class="tp-avatar"><img src="assets/valerie-van-pelt.png" alt="Valerie Van Pelt"></div>
-        <div class="tp-avatar"><img src="assets/lori-olson.png" alt="Lori Olson"></div>
-        <div class="tp-avatar"><img src="assets/kelley-novak.png" alt="Kelley Novak"></div>
-        <div class="tp-avatar"><img src="assets/aaron-miller.png" alt="Aaron Miller"></div>
-        <div class="tp-avatar"><img src="assets/jim-whiddon.png" alt="Jim Whiddon"></div>
-        <div class="tp-avatar"><img src="assets/johnathan-whiddon.png" alt="Johnathan Whiddon"></div>
+        <a class="tp-person" href="team.html" data-name="Valerie Van Pelt" data-role="Senior Real Estate Specialist" aria-label="Valerie Van Pelt, Senior Real Estate Specialist">
+          <span class="tp-avatar"><img src="assets/valerie-van-pelt.png" alt="Valerie Van Pelt"></span>
+        </a>
+        <a class="tp-person" href="team.html" data-name="Lori Olson" data-role="Downsizing, Space Planning & Moving" aria-label="Lori Olson, Downsizing, Space Planning & Moving">
+          <span class="tp-avatar"><img src="assets/lori-olson.png" alt="Lori Olson"></span>
+        </a>
+        <a class="tp-person" href="team.html" data-name="Kelley Novak" data-role="Senior Living Navigator" aria-label="Kelley Novak, Senior Living Navigator">
+          <span class="tp-avatar"><img src="assets/kelley-novak.png" alt="Kelley Novak"></span>
+        </a>
+        <a class="tp-person" href="team.html" data-name="Aaron Miller" data-role="Estate Planning Attorney" aria-label="Aaron Miller, Estate Planning Attorney">
+          <span class="tp-avatar"><img src="assets/aaron-miller.png" alt="Aaron Miller"></span>
+        </a>
+        <a class="tp-person" href="team.html" data-name="Jim Whiddon" data-role="Financial Planning" aria-label="Jim Whiddon, Financial Planning">
+          <span class="tp-avatar"><img src="assets/jim-whiddon.png" alt="Jim Whiddon"></span>
+        </a>
+        <a class="tp-person" href="team.html" data-name="Johnathan Whiddon" data-role="Financial Planning" aria-label="Johnathan Whiddon, Financial Planning">
+          <span class="tp-avatar"><img src="assets/johnathan-whiddon.png" alt="Johnathan Whiddon"></span>
+        </a>
       </div>
       <p class="team-photo-caption">Valerie Van Pelt · Lori Olson · Kelley Novak · Aaron Miller · Jim Whiddon · Johnathan Whiddon</p>
       <div class="tp-actions">
