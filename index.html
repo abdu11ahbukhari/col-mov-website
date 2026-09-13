@@ -106,7 +106,7 @@
     text-decoration: none;
   }
   .brand img{
-    height: 160px;
+    height: 62px;
     width: auto;
     display: block;
   }
@@ -729,7 +729,7 @@
     padding: 14px 22px;
     border-radius: 6px;
   }
-  .footer-brand img{ height: 84px; width: auto; display: block; }
+  .footer-brand img{ height: 52px; width: auto; display: block; }
   .footer-links{ display: flex; gap: 40px; flex-wrap: wrap; }
   .footer-links div h4{
     font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
@@ -822,6 +822,69 @@
     .team-photo-row:hover .tp-person:hover, .tp-person:focus-visible{ transform: none !important; }
   }
 
+
+  /* ---------- FLOATING SEMINAR BANNER ---------- */
+  /* Steps aside automatically while the team photos are on screen. */
+  .sem-banner{
+    position: fixed;
+    right: 26px;
+    bottom: 26px;
+    z-index: 80;
+    width: 344px;
+    max-width: calc(100vw - 32px);
+    background: var(--navy-deep);
+    color: var(--cream);
+    border-radius: 12px;
+    border-top: 4px solid #71975a;
+    box-shadow: 0 14px 46px rgba(0,0,0,0.34);
+    padding: 22px 24px 24px;
+    opacity: 0;
+    transform: translateY(calc(100% + 40px));
+    transition: transform .55s cubic-bezier(.22,.61,.36,1), opacity .35s ease;
+    pointer-events: none;
+  }
+  .sem-banner.show{ opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .sem-banner.tuck{ opacity: 0; transform: translateY(calc(100% + 40px)); pointer-events: none; }
+  .sem-banner .bn-k{
+    display: block; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: #a9c398; margin-bottom: 8px;
+  }
+  .sem-banner .bn-t{
+    display: block; font-family: var(--serif); font-size: 25px;
+    line-height: 1.18; color: var(--paper);
+  }
+  .sem-banner .bn-s{
+    display: block; font-size: 13.5px; line-height: 1.5;
+    color: rgba(248,244,236,0.72); margin-top: 10px;
+  }
+  .sem-banner .bn-d{
+    display: block; font-size: 13.5px; font-weight: 600;
+    color: var(--paper); margin-top: 12px;
+    padding-top: 12px; border-top: 1px solid rgba(248,244,236,0.18);
+  }
+  .sem-banner a.bn-cta{
+    display: block; margin-top: 16px; text-align: center;
+    font-family: var(--sans); font-size: 14px; font-weight: 600;
+    background: var(--paper); color: var(--navy);
+    text-decoration: none; padding: 13px 18px; border-radius: 7px;
+    transition: background .2s ease;
+  }
+  .sem-banner a.bn-cta:hover{ background: var(--cream); }
+  .sem-banner .bn-x{
+    position: absolute; top: 10px; right: 10px;
+    background: none; border: none; cursor: pointer;
+    color: rgba(248,244,236,0.5); font-size: 21px; line-height: 1;
+    padding: 4px 8px; border-radius: 4px;
+  }
+  .sem-banner .bn-x:hover{ color: var(--paper); }
+  @media (max-width: 620px){
+    .sem-banner{ right: 12px; left: 12px; bottom: 12px; width: auto; max-width: none; padding: 18px 20px 20px; }
+    .sem-banner .bn-t{ font-size: 21px; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .sem-banner{ transition: opacity .2s ease; }
+  }
 </style>
 </head>
 <body>
@@ -829,7 +892,7 @@
 <header class="site-nav">
   <div class="nav-inner">
     <a href="#top" class="brand">
-      <img src="assets/collective-moves-logo.png" alt="Collective Moves: Gathered together, Moving you forward">
+      <img src="assets/collective-moves-logo-h.png" alt="Collective Moves: Gathered together, Moving you forward">
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.main-links').classList.toggle('open')">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -1122,12 +1185,13 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/collective-moves-logo.png" alt="Collective Moves: Gathered together, Moving you forward">
+        <img src="assets/collective-moves-logo-h.png" alt="Collective Moves: Gathered together, Moving you forward">
       </div>
       <div class="footer-links">
         <div>
           <h4>Site</h4>
           <a href="team.html">Meet the Collective</a>
+          <a href="seminars.html">Seminars</a>
           <a href="#services">How It Works</a>
           <a href="#together">Better Together</a>
           <a href="resources.html">Resources</a>
@@ -1152,6 +1216,48 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+
+<!-- FLOATING SEMINAR BANNER -->
+<div class="sem-banner" id="semBanner" role="region" aria-label="Upcoming seminar">
+  <span class="bn-k">Free Seminar</span>
+  <span class="bn-t">Don't Wait, Plan Now!</span>
+  <span class="bn-s">Downsizing, selling, and what comes next. No cost, no pressure, refreshments served.</span>
+  <span class="bn-d" id="semBannerDate">Three dates this fall</span>
+  <a class="bn-cta" href="seminars.html">See the dates and RSVP</a>
+  <button class="bn-x" id="semBannerClose" aria-label="Dismiss seminar banner">&times;</button>
+</div>
+
+<script>
+  (function(){
+    var el = document.getElementById('semBanner');
+    if (!el) return;
+    var seminars = [
+      { d: '2026-10-08', label: 'Next: Oct 8, Addison Athletic Club' },
+      { d: '2026-10-20', label: 'Next: Oct 20, Ventana at Buckner' },
+      { d: '2026-11-05', label: 'Next: Nov 5, The Preserve at Spring Creek' }
+    ];
+    var today = new Date(); today.setHours(0,0,0,0);
+    var next = seminars.filter(function(s){ return new Date(s.d + 'T00:00:00') >= today; })[0];
+    if (!next) { el.remove(); return; }
+    document.getElementById('semBannerDate').textContent = next.label;
+    var dismissed = false;
+    try { dismissed = sessionStorage.getItem('cmSemBanner') === 'hide'; } catch(e){}
+    if (dismissed) { el.remove(); return; }
+    setTimeout(function(){ el.classList.add('show'); }, 1200);
+    var photos = document.querySelector('.team-photo');
+    if (photos && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ el.classList.toggle('tuck', e.isIntersecting); });
+      }, { threshold: 0.12 }).observe(photos);
+    }
+    document.getElementById('semBannerClose').addEventListener('click', function(){
+      el.classList.remove('show');
+      try { sessionStorage.setItem('cmSemBanner','hide'); } catch(e){}
+      setTimeout(function(){ el.remove(); }, 500);
+    });
+  })();
 </script>
 
 </body>
