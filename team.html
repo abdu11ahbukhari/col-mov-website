@@ -113,14 +113,19 @@
   nav.main-links{
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    row-gap: 10px;
     gap: 34px;
   }
+  @media (max-width: 1120px){ nav.main-links{ gap: 22px; } }
   nav.main-links a{
     text-decoration: none;
     font-size: 14.5px;
     font-weight: 500;
     color: var(--ink);
     opacity: 0.82;
+    white-space: nowrap;
   }
   nav.main-links a:hover{ opacity: 1; color: var(--navy); }
   .nav-pill{
@@ -888,7 +893,6 @@
         <div>
           <h4>Site</h4>
           <a href="team.html">Meet the Collective</a>
-          <a href="seminars.html">Seminars</a>
           <a href="index.html#services">How It Works</a>
           <a href="index.html#together">Better Together</a>
           <a href="resources.html">Resources</a>
