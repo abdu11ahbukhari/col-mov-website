@@ -762,6 +762,16 @@
     .voices-side{ border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 34px; }
   }
 
+  /* ---------- FAQ TEASER ---------- */
+  .faq-teaser{ padding: 90px 0 20px; background: var(--paper); }
+  .faq-teaser .wrap{ max-width: 820px; }
+  .faq-teaser h2{ font-size: clamp(26px, 3.2vw, 36px); margin: 14px 0 26px; }
+  .faq-links{ list-style: none; padding: 0; margin: 0 0 28px; border-top: 1px solid var(--line); }
+  .faq-links li{ border-bottom: 1px solid var(--line); }
+  .faq-links a{ display: block; padding: 16px 30px 16px 0; text-decoration: none; font-size: 17px; color: var(--ink); position: relative; }
+  .faq-links a::after{ content: '\2192'; position: absolute; right: 4px; color: var(--ink-soft); }
+  .faq-links a:hover{ color: var(--navy-deep); text-decoration: underline; }
+
   /* ---------- CONTACT ---------- */
   .contact{ padding: 110px 0; background: var(--paper); position: relative; overflow: hidden; }
   .contact > .wrap{ position: relative; z-index: 1; }
@@ -998,14 +1008,14 @@
 </head>
 <body>
 
-<!-- SEMINAR BANNER -->
-<div class="sem-banner" id="semBanner" role="region" aria-label="Upcoming seminar">
+<!-- TOP BANNER: next seminar when one is scheduled, otherwise latest press -->
+<div class="sem-banner" id="semBanner" role="region" aria-label="In the news">
   <div class="sem-banner-inner">
-    <span class="bn-k">Free Seminar</span>
-    <span class="bn-t">Don't Wait, Plan Now!</span>
-    <span class="bn-d" id="semBannerDate">Three dates this fall</span>
-    <a class="bn-cta" href="seminars.html">See the dates and RSVP</a>
-    <button class="bn-x" id="semBannerClose" aria-label="Dismiss seminar banner">&times;</button>
+    <span class="bn-k" id="bnK">In the News</span>
+    <span class="bn-t" id="bnT">Valerie Van Pelt Introduces Collective Moves</span>
+    <span class="bn-d" id="semBannerDate">PR Newswire · Nov 10, 2026</span>
+    <a class="bn-cta" id="bnCta" href="media.html">Read the press release</a>
+    <button class="bn-x" id="semBannerClose" aria-label="Dismiss banner">&times;</button>
   </div>
 </div>
 
@@ -1023,6 +1033,8 @@
       <a href="#services">How It Works</a>
       <a href="#together">Better Together</a>
       <a href="#voices">Families We've Helped</a>
+      <a href="faq.html" class="nav-pill">FAQ</a>
+      <a href="media.html">Media</a>
       <a href="resources.html" class="nav-pill">Resources</a>
     </nav>
   </div>
@@ -1269,6 +1281,21 @@
     </div>
   </section>
 
+  <!-- COMMON QUESTIONS -->
+  <section class="faq-teaser" id="faq">
+    <div class="wrap">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Thinking About Downsizing? Start With These Questions.</h2>
+      <ul class="faq-links">
+        <li><a href="faq.html#q1">How do I know when it's time to downsize?</a></li>
+        <li><a href="faq.html#q2">Where do I start if the whole idea feels overwhelming?</a></li>
+        <li><a href="faq.html#q4">What can I afford, and how much would I actually keep from selling my home?</a></li>
+        <li><a href="faq.html#q5">Do I have to sell my house before I move?</a></li>
+      </ul>
+      <a class="tp-btn" href="faq.html">See all 10 questions</a>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="section-photo op-light" style="background-image:url('assets/bg-contact.jpg')"></div>
@@ -1322,6 +1349,8 @@
           <a href="team.html">Meet the Collective</a>
           <a href="#services">How It Works</a>
           <a href="#together">Better Together</a>
+          <a href="faq.html">FAQ</a>
+          <a href="media.html">Media</a>
           <a href="resources.html">Resources</a>
         </div>
         <div>
@@ -1349,7 +1378,8 @@
 
 
 <script>
-  // Seminar banner: shows the next upcoming date, stays dismissed for the session
+  // Top banner: shows the next upcoming seminar if there is one, otherwise the latest press release.
+  // Each version stays dismissed for the session once closed.
   (function(){
     var el = document.getElementById('semBanner');
     if (!el) return;
@@ -1360,14 +1390,23 @@
     ];
     var today = new Date(); today.setHours(0,0,0,0);
     var next = seminars.filter(function(s){ return new Date(s.d + 'T00:00:00') >= today; })[0];
-    if (!next) { el.remove(); return; }
-    document.getElementById('semBannerDate').textContent = next.label;
+    var key = 'cmPressBanner';
+    if (next) {
+      key = 'cmSemBanner';
+      el.setAttribute('aria-label', 'Upcoming seminar');
+      document.getElementById('bnK').textContent = 'Free Seminar';
+      document.getElementById('bnT').textContent = "Don't Wait, Plan Now!";
+      document.getElementById('semBannerDate').textContent = next.label;
+      var cta = document.getElementById('bnCta');
+      cta.textContent = 'See the dates and RSVP';
+      cta.setAttribute('href', 'seminars.html');
+    }
     var dismissed = false;
-    try { dismissed = sessionStorage.getItem('cmSemBanner') === 'hide'; } catch(e){}
+    try { dismissed = sessionStorage.getItem(key) === 'hide'; } catch(e){}
     if (dismissed) { el.remove(); return; }
     document.getElementById('semBannerClose').addEventListener('click', function(){
       el.remove();
-      try { sessionStorage.setItem('cmSemBanner','hide'); } catch(e){}
+      try { sessionStorage.setItem(key,'hide'); } catch(e){}
     });
   })();
 </script>
