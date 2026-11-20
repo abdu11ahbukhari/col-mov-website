@@ -34,13 +34,18 @@
   },
   {
    "@type": "Person",
-   "name": "LeAnn Holt-Martinez",
-   "jobTitle": "Organizing, Downsizing & Moving"
+   "name": "Lori Olson",
+   "jobTitle": "Downsizing, Space Planning & Moving",
+   "worksFor": {
+    "@type": "MovingCompany",
+    "name": "Your Moving Butlers",
+    "areaServed": "Dallas-Fort Worth, TX"
+   }
   },
   {
    "@type": "Person",
-   "name": "Lori Olson",
-   "jobTitle": "Downsizing, Space Planning & Moving"
+   "name": "LeAnn Holt-Martinez",
+   "jobTitle": "Organizing, Downsizing & Moving"
   },
   {
    "@type": "Person",
@@ -787,6 +792,17 @@
     font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
     color: rgba(248,244,236,0.5); margin: 0 0 12px; font-weight: 600;
   }
+  .footer-addr{ display: block; font-size: 14px; line-height: 1.5; color: rgba(248,244,236,0.62); margin-top: 4px; }
+  .footer-name{ display: block; font-size: 14px; font-weight: 600; color: rgba(248,244,236,0.92); margin-bottom: 6px; }
+  .footer-addr{ margin: 0 0 9px; }
+  .trec-links{ flex-basis: 100%; font-size: 14px; }
+  .trec-links a{ color: rgba(248,244,236,0.82); text-decoration: underline; }
+  .footer-links a.footer-cta{
+    display: inline-block; margin: 14px 0 0; padding: 10px 20px;
+    border: 1px solid rgba(248,244,236,0.7); border-radius: 9999px;
+    color: #f8f4ec; font-weight: 500; transition: background .2s ease, color .2s ease;
+  }
+  .footer-links a.footer-cta:hover{ background: #f8f4ec; color: #171717; }
   .footer-links a{ display: block; font-size: 14px; text-decoration: none; color: rgba(248,244,236,0.82); margin-bottom: 9px; }
   .footer-bottom{
     display: flex;
@@ -840,6 +856,16 @@
   .tp-avatar.pending{ background: var(--cream); }
   .tp-avatar.pending svg{ color: #c9c9c6; }
 
+  .name-link{ color: inherit; text-decoration: none; }
+  .name-link:hover{ text-decoration: underline; }
+  .company-card{
+    margin-top: 26px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 4px;
+    background: var(--paper); display: grid; grid-template-columns: 120px 1fr; gap: 22px; align-items: start;
+  }
+  .company-card img{ width: 120px; height: auto; display: block; }
+  .company-card h4{ font-family: var(--serif); font-size: 21px; margin: 4px 0 8px; }
+  .company-card p{ margin: 0; }
+  @media (max-width: 620px){ .company-card{ grid-template-columns: 1fr; } .company-card img{ width: 140px; } }
 </style>
 </head>
 <body>
@@ -878,37 +904,22 @@
       <!-- Valerie -->
       <div class="profile reveal">
         <div class="photo">
-          <img src="assets/valerie-van-pelt.png" alt="Valerie Van Pelt">
+          <a href="https://www.compass.com/agents/valerie-van-pelt/" target="_blank" rel="noopener"><img src="assets/valerie-van-pelt.png" alt="Valerie Van Pelt"></a>
         </div>
         <div class="content">
           <span class="role">Seniors Real Estate Specialist®</span>
-          <h3>Valerie Van Pelt</h3>
+          <h3><a class="name-link" href="https://www.compass.com/agents/valerie-van-pelt/" target="_blank" rel="noopener">Valerie Van Pelt</a></h3>
           <p>The pencil marks on your parents' kitchen doorframe are still there. Now you're at that same kitchen table, looking for the words to ask what would make life easier for them. That conversation is where Valerie's work usually begins.</p>
           <p>A Dallas native, Valerie is a REALTOR® with Compass Park Cities and a Seniors Real Estate Specialist®. She helps older adults and their families talk through the emotions of leaving a longtime home and make a plan for the move. Her 25-plus years in sales, including medical devices, taught her to listen closely and explain complicated choices in plain language.</p>
           <p>She created Collective Moves to help families connect the dots between choosing a senior living community and getting ready to move. Valerie works with senior living teams to offer educational seminars and help families plan ahead. Once a community is chosen, she coordinates with the family and the community's team to line up the move-in date with preparing and selling the home, and connects families with trusted professionals for downsizing, estate sales, and legal or financial planning along the way.</p>
           <div class="with-team">Whether you're considering a move yourself or wondering how to bring it up with your parents, Valerie's advice is the same: start with the question that's been on your mind.</div>
           <a class="tp-btn solid profile-btn" href="https://www.compass.com/agents/valerie-van-pelt/" target="_blank" rel="noopener">View Valerie's Listings</a>
-          <p class="profile-links">Find Valerie on <a href="https://www.compass.com/agents/valerie-van-pelt/" target="_blank" rel="noopener">Compass</a> · <a href="https://www.linkedin.com/in/valerie-van-pelt-6300585" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://www.instagram.com/valerievanpeltgroup/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/valerievanpeltgroup" target="_blank" rel="noopener">Facebook</a></p>
-        </div>
-      </div>
-
-      <!-- LeAnn -->
-      <div class="profile reverse reveal">
-        <div class="photo">
-          <img src="assets/leann-holt-martinez.png" alt="LeAnn Holt-Martinez" loading="lazy">
-        </div>
-        <div class="content">
-          <span class="role">Organizing, Downsizing &amp; Moving</span>
-          <h3>LeAnn Holt-Martinez</h3>
-          <p>LeAnn handles the part everyone dreads: decades of belongings and a floor plan half the size. She works room by room with a family to decide what's kept, what's sold, what's donated, and what goes to which grandchild, at a pace the person actually moving can live with. Then her team packs it, moves it, and unpacks it on the other end, in most cases in forty-eight hours or less. Keeping people calm through a week that is rarely calm is as much a part of the job as the boxes.</p>
-          <p>She earned her BBA from The University of Texas at Tyler in 2009 and an MS in marketing from Texas A&amp;M University-Commerce in 2015, then put both to work founding Organized + Tidy, LLC in April 2021. The business started with hoarding cases. That led to single mothers who needed a system they could actually keep up with, and that led to seniors facing a downsize they had been putting off for years. Hundreds of clients later, the through line is the same: get organized, and stay that way.</p>
-          <p>In February 2026, Organized + Tidy was featured on the NBC 5 morning show. LeAnn lives with her husband Justin, his spunky twelve-year-old daughter, and a corgi named Foxxie.</p>
-          <div class="with-team">LeAnn comes in early, alongside the realtor. Sorting and packing on her schedule is what lets a house be photographed, listed, and shown without a scramble, and it keeps the move itself from landing on the family all at once.</div>
+          <p class="profile-links">Find Valerie on <a href="https://www.compass.com/agents/valerie-van-pelt/" target="_blank" rel="noopener">Compass</a> · <a href="https://www.linkedin.com/in/valerievanpeltgroup/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://www.instagram.com/valerievanpeltgroup/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/valerievanpeltgroup" target="_blank" rel="noopener">Facebook</a> · <a href="https://maps.app.goo.gl/tWSjNYwk597HQnnt7" target="_blank" rel="noopener">Google Reviews (5.0, 65 reviews)</a></p>
         </div>
       </div>
 
       <!-- Lori -->
-      <div class="profile reveal">
+      <div class="profile reverse reveal">
         <div class="photo">
           <img src="assets/lori-olson.png" alt="Lori Olson" loading="lazy">
         </div>
@@ -918,6 +929,28 @@
           <p>Lori handles the part everyone dreads: forty years of belongings and a floor plan half the size. She works room by room with a family to decide what's kept, what's sold, what's donated, and what goes to which grandchild, at a pace the person actually moving can live with. Before moving day she measures the new space and plans it out, so the sofa, the bed, and the pieces that matter are known to fit before anything is loaded on a truck.</p>
           <p>A native South Dakotan and Texan by choice, Lori studied at Augustana University before completing her BA in business and marketing at Texas Lutheran University. She has worked across faith, real estate, construction, facilities management, and the relocation industry, most recently in a blended marketing, operations, and project management role at a senior moving company in Farmers Branch. Navigating sensitive and difficult moves is the thread running through all of it.</p>
           <div class="with-team">Lori comes in early, alongside the realtor. Sorting and packing on her schedule is what lets a house be photographed, listed, and shown without a scramble, and it keeps the move itself from landing on the family all at once.</div>
+          <div class="company-card">
+            <img src="assets/your-moving-butlers.png" alt="Your Moving Butlers logo" loading="lazy">
+            <div>
+              <span class="role">Lori's Moving Company</span>
+              <h4>Your Moving Butlers</h4>
+              <p>Your Moving Butlers handles moving day the white-glove way. The crew packs with care, protects furniture and floors, and gives extra attention to the delicate and irreplaceable pieces, from the china cabinet to the family photos in the hallway. Based in Hurst and serving Dallas-Fort Worth, they unpack too, so a new apartment or senior living residence feels settled from the first night.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LeAnn -->
+      <div class="profile reveal">
+        <div class="photo">
+          <img src="assets/leann-holt-martinez.png" alt="LeAnn Holt-Martinez" loading="lazy">
+        </div>
+        <div class="content">
+          <span class="role">Organizing, Downsizing &amp; Moving</span>
+          <h3>LeAnn Holt-Martinez</h3>
+          <p>LeAnn helps families sort through a lifetime of belongings, one room at a time: what comes along, what gets sold or donated, and what goes to the grandkids. Then her team packs, moves, and unpacks, usually within 48 hours.</p>
+          <p>She founded Organized + Tidy, LLC in 2021, after earning a BBA from The University of Texas at Tyler and an MS in marketing from Texas A&amp;M University-Commerce. Hundreds of clients later, her goal is still the same: get organized and stay that way. In February 2026, Organized + Tidy was featured on NBC 5's morning show.</p>
+          <div class="with-team">LeAnn can start well before the house is listed, so the sorting happens on a calm schedule instead of in a rush the week before the truck arrives.</div>
         </div>
       </div>
 
@@ -1009,20 +1042,6 @@
         </div>
       </div>
 
-      <!-- Your Moving Butlers -->
-      <div class="profile reverse reveal">
-        <div class="photo">
-          <img src="assets/your-moving-butlers.png" alt="Your Moving Butlers logo" loading="lazy" style="object-fit: contain; object-position: center;">
-        </div>
-        <div class="content">
-          <span class="role">White-Glove Service in Collaboration with Collective Moves</span>
-          <h3>Your Moving Butlers</h3>
-          <p>Your Moving Butlers handles moving day itself, and handles it the white-glove way. The crew packs with care, protects furniture and floors, and gives the delicate, valuable, and irreplaceable pieces the extra attention they deserve, from the china cabinet to the framed family photos on the hallway wall.</p>
-          <p>Based in Hurst and serving the Dallas-Fort Worth area, they offer packing and unpacking along with the move itself, so a new apartment or senior living residence can feel settled from the very first night instead of weeks later.</p>
-          <div class="with-team">Your Moving Butlers works in step with LeAnn and the rest of the team, so the truck arrives on the date the senior living community and the closing are already planned around.</div>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -1044,15 +1063,28 @@
           <a href="media.html">Media</a>
           <a href="resources.html">Resources</a>
         </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <span class="footer-name">Valerie Van Pelt, REALTOR®, SRES®</span>
+          <span class="footer-addr">Compass Park Cities<br>5960 Berkshire Lane #700<br>Dallas, TX 75225</span>
+          <a href="tel:+12147082115">214-708-2115</a>
+          <a href="mailto:valerie.vanpelt@compass.com">valerie.vanpelt@compass.com</a>
+          <a href="https://www.trec.texas.gov/apps/license-holder-search/" target="_blank" rel="noopener">TREC License #0658102</a>
+          <a class="footer-cta" href="https://calendly.com/valerie-vanpelt-compass/30min" target="_blank" rel="noopener">Book a 30-Minute Call</a>
+        </div>
         <div>
           <h4>Connect</h4>
-          <a href="#">Instagram</a>
+          <a href="https://www.instagram.com/valerievanpeltgroup/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/valerievanpeltgroup" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.linkedin.com/in/valerievanpeltgroup/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://maps.app.goo.gl/tWSjNYwk597HQnnt7" target="_blank" rel="noopener">Google Reviews</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span id="year-line">© 2026 Collective Moves</span>
       <span class="legal">Valerie Van Pelt is a REALTOR® with Compass Park Cities. Collective Moves is an independent network of professionals; each provides services under their own license and business.</span>
+      <span class="trec-links"><a href="https://www.compass.com/ucfe-assets/consumer-footer/9/IABS-1-2.pdf" target="_blank" rel="noopener">Texas Real Estate Commission Information About Brokerage Services</a> · <a href="https://www.trec.texas.gov/sites/default/files/pdf-forms/CN%201-4-1_1.pdf" target="_blank" rel="noopener">Texas Real Estate Commission Consumer Protection Notice</a></span>
     </div>
   </div>
 </footer>

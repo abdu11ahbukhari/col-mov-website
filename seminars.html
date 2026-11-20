@@ -753,6 +753,17 @@
     font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
     color: rgba(248,244,236,0.5); margin: 0 0 12px; font-weight: 600;
   }
+  .footer-addr{ display: block; font-size: 14px; line-height: 1.5; color: rgba(248,244,236,0.62); margin-top: 4px; }
+  .footer-name{ display: block; font-size: 14px; font-weight: 600; color: rgba(248,244,236,0.92); margin-bottom: 6px; }
+  .footer-addr{ margin: 0 0 9px; }
+  .trec-links{ flex-basis: 100%; font-size: 14px; }
+  .trec-links a{ color: rgba(248,244,236,0.82); text-decoration: underline; }
+  .footer-links a.footer-cta{
+    display: inline-block; margin: 14px 0 0; padding: 10px 20px;
+    border: 1px solid rgba(248,244,236,0.7); border-radius: 9999px;
+    color: #f8f4ec; font-weight: 500; transition: background .2s ease, color .2s ease;
+  }
+  .footer-links a.footer-cta:hover{ background: #f8f4ec; color: #171717; }
   .footer-links a{ display: block; font-size: 14px; text-decoration: none; color: rgba(248,244,236,0.82); margin-bottom: 9px; }
   .footer-bottom{
     display: flex;
@@ -768,11 +779,23 @@
   ::selection{ background: var(--ink); color: var(--paper); }
 
   /* Placeholder for team members whose photo hasn't arrived yet */
-  .photo.pending{ background: var(--cream); flex-direction: column; gap: 14px; }
+  .photo.pending{
+    background: var(--cream);
+    flex-direction: column;
+    gap: 14px;
+  }
   .photo.pending svg{ color: var(--line); }
-  .photo.pending .pending-note{ font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); opacity: 0.75; }
+  .photo.pending .pending-note{
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink-soft);
+    opacity: 0.75;
+  }
   .tp-avatar.pending{ background: var(--cream); }
   .tp-avatar.pending svg{ color: #c9c9c6; }
+
 
   /* ---- Team bubble hover: lift, highlight, reveal name ---- */
   .tp-person{
@@ -805,6 +828,7 @@
   }
 
   @media (hover: hover){
+    /* everyone else recedes so the hovered face carries the row */
     .team-photo-row:hover .tp-person{ opacity: .38; filter: grayscale(.4); }
     .team-photo-row:hover .tp-person:hover{
       opacity: 1;
@@ -820,10 +844,12 @@
       opacity: 1;
       transform: translate(-50%, 0);
     }
+    /* the static name list steps back while a face is focused */
     .team-photo-row:hover + .team-photo-caption{ opacity: 0; }
   }
   .team-photo-caption{ transition: opacity .3s ease; }
 
+  /* keyboard parity with hover */
   .tp-person:focus-visible{
     outline: none;
     transform: translateY(-8px) scale(1.13);
@@ -841,18 +867,32 @@
   }
 
 
-
   /* ---------- SEMINARS PAGE ---------- */
   .sem-hero{ padding: 52px 0 60px; background: var(--paper); }
   .sem-hero .wrap{ max-width: 820px; }
-  .sem-hero h1{ font-size: clamp(34px, 4.4vw, 52px); line-height: 1.1; letter-spacing: -0.01em; margin: 16px 0 10px; }
-  .sem-hero .kicker{ font-family: var(--serif); font-size: clamp(19px, 2.2vw, 25px); color: var(--ink-soft); margin: 0 0 22px; }
+  .sem-hero h1{
+    font-size: clamp(34px, 4.4vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 16px 0 10px;
+  }
+  .sem-hero .kicker{
+    font-family: var(--serif);
+    font-size: clamp(19px, 2.2vw, 25px);
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+  }
   .sem-hero .lede{ font-size: 17.5px; color: var(--ink-soft); max-width: 62ch; }
 
   .sem-topics{ background: var(--cream); padding: 56px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .topic-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
   .topic{ text-align: center; }
-  .topic .ic{ width: 60px; height: 60px; margin: 0 auto 16px; border: 1px solid var(--line); border-radius: 50%; background: var(--paper); display: flex; align-items: center; justify-content: center; }
+  .topic .ic{
+    width: 60px; height: 60px; margin: 0 auto 16px;
+    border: 1px solid var(--line); border-radius: 50%;
+    background: var(--paper);
+    display: flex; align-items: center; justify-content: center;
+  }
   .topic h3{ font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--navy); margin: 0 0 8px; }
   .topic p{ font-size: 14.5px; color: var(--ink-soft); margin: 0; }
 
@@ -860,17 +900,41 @@
   .sem-list .head{ max-width: 680px; margin-bottom: 40px; }
   .sem-list .head h2{ font-size: clamp(26px, 3.2vw, 36px); margin-top: 14px; }
 
-  .sem-card{ display: grid; grid-template-columns: 150px 1fr auto; gap: 34px; align-items: center; padding: 30px 0; border-top: 1px solid var(--line); }
+  .sem-card{
+    display: grid;
+    grid-template-columns: 150px 1fr auto;
+    gap: 34px;
+    align-items: center;
+    padding: 30px 0;
+    border-top: 1px solid var(--line);
+  }
   .sem-card:last-of-type{ border-bottom: 1px solid var(--line); }
   .sem-date{ text-align: center; }
-  .sem-date .mo{ display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
-  .sem-date .dy{ display: block; font-family: var(--serif); font-size: 46px; line-height: 1.05; color: var(--navy); margin-top: 2px; }
+  .sem-date .mo{
+    display: block; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold);
+  }
+  .sem-date .dy{
+    display: block; font-family: var(--serif); font-size: 46px;
+    line-height: 1.05; color: var(--navy); margin-top: 2px;
+  }
   .sem-date .yr{ display: block; font-size: 12px; color: var(--ink-soft); letter-spacing: 0.08em; }
   .sem-meta h3{ font-size: 21px; margin: 0 0 6px; }
   .sem-meta .where{ font-size: 15px; color: var(--ink); margin: 0 0 3px; }
   .sem-meta .when{ font-size: 14.5px; color: var(--ink-soft); margin: 0; }
-  .sem-tag{ display: inline-block; margin-top: 10px; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); background: var(--cream); border: 1px solid var(--line); border-radius: 9999px; padding: 4px 12px; }
-  .sem-rsvp{ font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--paper); background: var(--ink); text-decoration: none; padding: 12px 24px; border-radius: 6px; border: 1px solid var(--ink); white-space: nowrap; transition: background .2s ease; }
+  .sem-tag{
+    display: inline-block; margin-top: 10px;
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); background: var(--cream);
+    border: 1px solid var(--line); border-radius: 9999px; padding: 4px 12px;
+  }
+  .sem-rsvp{
+    font-family: var(--sans); font-size: 13px; font-weight: 600;
+    color: var(--paper); background: var(--ink);
+    text-decoration: none; padding: 12px 24px; border-radius: 6px;
+    border: 1px solid var(--ink); white-space: nowrap;
+    transition: background .2s ease;
+  }
   .sem-rsvp:hover{ background: var(--navy-deep); }
 
   .sem-how{ background: var(--navy-deep); color: var(--cream); padding: 64px 0; margin-top: 50px; }
@@ -878,12 +942,22 @@
   .sem-how .eyebrow{ color: rgba(248,244,236,0.6); }
   .sem-how h2{ color: var(--paper); font-size: clamp(25px, 3vw, 34px); margin: 14px 0 16px; }
   .sem-how p{ color: rgba(248,244,236,0.72); font-size: 16px; margin: 0 0 20px; }
-  .sem-how .phone{ display: inline-block; font-family: var(--serif); font-size: 30px; color: var(--paper); text-decoration: none; border-bottom: 1px solid rgba(248,244,236,0.35); padding-bottom: 4px; }
+  .sem-how .phone{
+    display: inline-block; font-family: var(--serif); font-size: 30px;
+    color: var(--paper); text-decoration: none; border-bottom: 1px solid rgba(248,244,236,0.35);
+    padding-bottom: 4px;
+  }
   .sem-how .note{ font-size: 14px; color: rgba(248,244,236,0.55); margin-top: 22px; }
 
   .sem-partners{ padding: 48px 0 70px; text-align: center; }
-  .sem-partners .lbl{ font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); margin-bottom: 16px; }
-  .sem-partners .names{ font-family: var(--serif); font-size: 17px; color: var(--navy); line-height: 1.9; }
+  .sem-partners .lbl{
+    font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink-soft); margin-bottom: 16px;
+  }
+  .sem-partners .names{
+    font-family: var(--serif); font-size: 17px; color: var(--navy);
+    line-height: 1.9;
+  }
 
   @media (max-width: 820px){
     .topic-grid{ grid-template-columns: 1fr; gap: 34px; }
@@ -895,10 +969,20 @@
   /* dates lead the page, so the list gets the opening spacing and the intro follows */
   .sem-list.sem-first{ padding: 52px 0 40px; }
   .sem-list.sem-first .head{ max-width: 760px; margin-bottom: 44px; }
-  .sem-list.sem-first .head h1{ font-size: clamp(34px, 4.4vw, 52px); line-height: 1.1; letter-spacing: -0.01em; margin: 16px 0 14px; }
+  .sem-list.sem-first .head h1{
+    font-size: clamp(34px, 4.4vw, 52px);
+    line-height: 1.1; letter-spacing: -0.01em; margin: 16px 0 14px;
+  }
   .sem-list.sem-first .head .lede{ font-size: 17px; color: var(--ink-soft); margin: 0; }
   .sem-hero.sem-after{ padding: 62px 0 48px; border-top: 1px solid var(--line); }
-  .sem-hero.sem-after h2{ font-size: clamp(30px, 3.6vw, 42px); line-height: 1.12; margin: 16px 0 10px; }
+  .sem-hero.sem-after h2{
+    font-size: clamp(30px, 3.6vw, 42px);
+    line-height: 1.12; margin: 16px 0 10px;
+  }
+  .sem-empty{ border: 1px solid var(--line); border-radius: 4px; background: var(--cream); padding: 34px 32px; text-align: center; max-width: 640px; margin: 0 auto; }
+  .sem-empty h3{ font-size: 24px; margin: 0 0 10px; }
+  .sem-empty p{ color: var(--ink-soft); margin: 0 auto 20px; max-width: 48ch; }
+  .sem-empty .sem-rsvp{ display: inline-block; }
 </style>
 </head>
 <body>
@@ -930,58 +1014,19 @@
     <div class="wrap">
       <div class="head">
         <span class="eyebrow">Free Community Seminars · Dallas–Fort Worth</span>
-        <h1>Upcoming Seminars</h1>
-        <p class="lede">Three chances to join us this fall. Each session runs about ninety minutes, costs nothing, and refreshments are served.</p>
+        <h1>Free Community Seminars</h1>
+        <p class="lede">Each session runs about ninety minutes, costs nothing, and refreshments are served.</p>
       </div>
 
-      <div class="sem-card">
-        <div class="sem-date">
-          <span class="mo">October</span>
-          <span class="dy">8</span>
-          <span class="yr">2026</span>
-        </div>
-        <div class="sem-meta">
-          <h3>Addison Athletic Club</h3>
-          <p class="where">3900 Beltway Drive, Addison, TX 75001</p>
-          <p class="when">Wednesday, 10:30 AM to 12:00 PM</p>
-          <span class="sem-tag">Refreshments served</span>
-        </div>
-        <a class="sem-rsvp" href="sms:+12147082115?&amp;body=Hi%20Valerie,%20I'd%20like%20to%20RSVP%20for%20the%20October%208%20seminar%20at%20Addison%20Athletic%20Club.">Text to RSVP</a>
-      </div>
-
-      <div class="sem-card">
-        <div class="sem-date">
-          <span class="mo">October</span>
-          <span class="dy">20</span>
-          <span class="yr">2026</span>
-        </div>
-        <div class="sem-meta">
-          <h3>Ventana at Buckner</h3>
-          <p class="where">Dallas, TX</p>
-          <p class="when">Monday, 11:30 AM to 1:00 PM</p>
-          <span class="sem-tag">Refreshments served</span>
-        </div>
-        <a class="sem-rsvp" href="sms:+12147082115?&amp;body=Hi%20Valerie,%20I'd%20like%20to%20RSVP%20for%20the%20October%2020%20seminar%20at%20Ventana%20at%20Buckner.">Text to RSVP</a>
-      </div>
-
-      <div class="sem-card">
-        <div class="sem-date">
-          <span class="mo">November</span>
-          <span class="dy">5</span>
-          <span class="yr">2026</span>
-        </div>
-        <div class="sem-meta">
-          <h3>The Preserve at Spring Creek</h3>
-          <p class="where">Garland, TX</p>
-          <p class="when">Thursday, 4:00 PM to 6:00 PM</p>
-          <span class="sem-tag">Refreshments served</span>
-        </div>
-        <a class="sem-rsvp" href="sms:+12147082115?&amp;body=Hi%20Valerie,%20I'd%20like%20to%20RSVP%20for%20the%20November%205%20seminar%20at%20The%20Preserve%20at%20Spring%20Creek.">Text to RSVP</a>
+      <div class="sem-empty">
+        <h3>New dates are being scheduled</h3>
+        <p>Our fall sessions have wrapped up. Text Valerie and she'll let you know as soon as the next seminar is on the calendar.</p>
+        <a class="sem-rsvp" href="sms:+12147082115?&amp;body=Hi%20Valerie,%20please%20let%20me%20know%20when%20the%20next%20Collective%20Moves%20seminar%20is%20scheduled.">Text Me the Next Date</a>
       </div>
     </div>
   </section>
 
-  <!-- WHAT THE SESSION COVERS -->
+  <!-- HERO -->
   <section class="sem-hero sem-after">
     <div class="wrap">
       <span class="eyebrow">What the Session Covers</span>
@@ -991,21 +1036,28 @@
     </div>
   </section>
 
+  <!-- WHAT WE COVER -->
   <section class="sem-topics">
     <div class="wrap">
       <div class="topic-grid">
         <div class="topic">
-          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.4"><path d="M3 8h18v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z" stroke-linejoin="round"/><path d="M2.5 4.5h19V8h-19z" stroke-linejoin="round"/><path d="M10 12h4" stroke-linecap="round"/></svg></div>
+          <div class="ic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.4"><path d="M3 8h18v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z" stroke-linejoin="round"/><path d="M2.5 4.5h19V8h-19z" stroke-linejoin="round"/><path d="M10 12h4" stroke-linecap="round"/></svg>
+          </div>
           <h3>Decluttering</h3>
           <p>Simplify your space and your life, one room at a time.</p>
         </div>
         <div class="topic">
-          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.4"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z" stroke-linejoin="round"/><path d="M9.5 15.5h5v3.5h-5z" stroke-linejoin="round"/></svg></div>
+          <div class="ic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.4"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z" stroke-linejoin="round"/><path d="M9.5 15.5h5v3.5h-5z" stroke-linejoin="round"/></svg>
+          </div>
           <h3>Real Estate Sales</h3>
           <p>Navigate the market with guidance built around a senior sale.</p>
         </div>
         <div class="topic">
-          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.4"><path d="M4 11 12 4.5 20 11v8.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z" stroke-linejoin="round"/><path d="M9 14.5a3 3 0 0 0 6 0" stroke-linecap="round"/><path d="M15.5 12.5 17 14l1.5-1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="ic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.4"><path d="M4 11 12 4.5 20 11v8.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z" stroke-linejoin="round"/><path d="M9 14.5a3 3 0 0 0 6 0" stroke-linecap="round"/><path d="M15.5 12.5 17 14l1.5-1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
           <h3>Reverse Purchase Options</h3>
           <p>A smart alternative worth understanding before your next move.</p>
         </div>
@@ -1017,10 +1069,10 @@
   <section class="sem-how">
     <div class="wrap">
       <span class="eyebrow">Saving You a Seat</span>
-      <h2>Text Valerie to RSVP</h2>
-      <p>A quick text is all it takes. Let us know which date you'd like, and how many are coming, so we set out enough chairs and coffee.</p>
-      <a class="phone" href="tel:+12147082115">(214) 708-2115</a>
-      <p class="note">Not able to make any of these dates? Send a note through the contact form and we'll let you know when the next one is scheduled.</p>
+      <h2>Text Valerie to Save a Seat</h2>
+      <p>A quick text is all it takes. Once new dates are posted, let us know which one you'd like and how many are coming, so we set out enough chairs and coffee.</p>
+      <a class="phone" href="tel:+12147082115">214-708-2115</a>
+      <p class="note">Would rather talk it through first? <a href="https://calendly.com/valerie-vanpelt-compass/30min" target="_blank" rel="noopener">Book a 30-minute call</a> with Valerie.</p>
     </div>
   </section>
 
@@ -1055,15 +1107,28 @@
           <a href="media.html">Media</a>
           <a href="resources.html">Resources</a>
         </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <span class="footer-name">Valerie Van Pelt, REALTOR®, SRES®</span>
+          <span class="footer-addr">Compass Park Cities<br>5960 Berkshire Lane #700<br>Dallas, TX 75225</span>
+          <a href="tel:+12147082115">214-708-2115</a>
+          <a href="mailto:valerie.vanpelt@compass.com">valerie.vanpelt@compass.com</a>
+          <a href="https://www.trec.texas.gov/apps/license-holder-search/" target="_blank" rel="noopener">TREC License #0658102</a>
+          <a class="footer-cta" href="https://calendly.com/valerie-vanpelt-compass/30min" target="_blank" rel="noopener">Book a 30-Minute Call</a>
+        </div>
         <div>
           <h4>Connect</h4>
-          <a href="#">Instagram</a>
+          <a href="https://www.instagram.com/valerievanpeltgroup/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/valerievanpeltgroup" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.linkedin.com/in/valerievanpeltgroup/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://maps.app.goo.gl/tWSjNYwk597HQnnt7" target="_blank" rel="noopener">Google Reviews</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span id="year-line">© 2026 Collective Moves</span>
       <span class="legal">Valerie Van Pelt is a REALTOR® with Compass Park Cities. Collective Moves is an independent network of professionals; each provides services under their own license and business.</span>
+      <span class="trec-links"><a href="https://www.compass.com/ucfe-assets/consumer-footer/9/IABS-1-2.pdf" target="_blank" rel="noopener">Texas Real Estate Commission Information About Brokerage Services</a> · <a href="https://www.trec.texas.gov/sites/default/files/pdf-forms/CN%201-4-1_1.pdf" target="_blank" rel="noopener">Texas Real Estate Commission Consumer Protection Notice</a></span>
     </div>
   </div>
 </footer>
